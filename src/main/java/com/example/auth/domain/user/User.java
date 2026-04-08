@@ -24,8 +24,9 @@ public class User implements UserDetails {
     private String id;
     private String login;
     private String password;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 10) // "ADMIN" ou "USER"
     private UserRole role;
-
     public User(String login, String password, UserRole role){
         this.login = login;
         this.password = password;
