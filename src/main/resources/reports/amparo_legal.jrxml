@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="amparo_legal" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="adde615b-f470-4089-937a-8a24b75d9a93">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="802" backcolor="rgba(255, 255, 255, 0.0)" uuid="aae6f4af-a4cb-410d-80ea-85fcf6998b2e"/>
+			</rectangle>
+			<line>
+				<reportElement x="0" y="28" width="555" height="1" uuid="ffd3cb9b-b62d-4e27-b887-00f9c8aac524">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="163" y="0" width="229" height="28" uuid="91343659-590d-4566-a4da-03bb61caadf4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["AMPARO LEGAL"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="157" width="555" height="1" uuid="95e6f3f5-0a93-4ed9-b774-7c827cedfdc9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="20" y="40" width="520" height="30" uuid="0c97b1fc-eba5-4ca4-bf20-9b48d2ea9555"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["O requerente preenche os requisitos da Portaria nº 035/07 do GCG para aquisição de arma de fogo, colete e munições."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="110" width="229" height="30" uuid="6ea46573-8337-40d2-8127-b692bb0ecf33"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA["______________, ____/____/_____"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="110" width="324" height="30" uuid="d65d821c-d9f1-47bb-9952-9f427e840063"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" isItalic="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["___________________________________________________\nAssinatura do Oficial Informante (Posto/Função)"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="177" width="555" height="1" uuid="633acd38-9bc5-41c2-8d5e-4e81b188ac65">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="167" y="158" width="220" height="18" uuid="1c4a8ee7-d7cd-469d-90e5-b29c58f13020"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DESPACHOS INTERMEDIÁRIOS"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="176" width="280" height="224" uuid="ec7a82d2-f731-40b8-8f52-03631734e1a9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="176" width="275" height="224" uuid="159870aa-c46c-4b58-971d-6a8a071703c3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="84" y="180" width="100" height="26" uuid="f4621528-ae51-4e2d-b68f-2e631af3f33d"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" isUnderline="true" isStrikeThrough="false" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cmt da OPM"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="367" y="180" width="100" height="26" uuid="65a06c4c-386b-4208-8873-0a9242515b8f"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" isUnderline="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Diretor da DAL"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="212" width="213" height="78" uuid="dab1c74a-d75f-4009-83ec-ced2a04c1127"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(     )  Defiro\n(     )  Indefiro\n(     )  Encaminhe-se ao Diretor da DAL para apreciação."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="313" width="280" height="25" uuid="4a6f3a82-9ac1-4540-97de-2c33929a56cc"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quartel em, _______ / ________ /_______."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="350" width="280" height="50" uuid="58387b17-3d5d-438d-af20-51cdd29ef364"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["________________________________\nAssinatura "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="212" width="213" height="88" uuid="28038def-c93f-48fd-9172-feb2ea098471"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(    ) De acordo.\n(    ) Defiro\n(    ) Indefiro\n(    ) Encaminhe-se  ao  Exmº  Sr.  Cmt. Geral para decisão"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="313" width="275" height="25" uuid="3b767019-533c-4d81-89fe-126c3a7aeb1e"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quartel em, _______ / ________ /_______."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="350" width="275" height="50" uuid="06942fd5-45b1-46bf-887a-96186b497258"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["________________________________\nAssinatura "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="423" width="555" height="1" uuid="7f4cca9a-bfd5-4821-a3fe-bc81f0634437">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="167" y="403" width="220" height="18" uuid="590e0215-5299-4817-b96a-589edc8d21d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DECISÃO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="450" width="213" height="80" uuid="858f4475-32e3-4ff4-970b-3f8a683396f8"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(    ) Defiro / Publique-se\n\n(    ) Indefiro / Publique-se"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="450" width="213" height="80" uuid="0b39a21f-54bc-4864-a028-5101f924eb77"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(    ) Dê-se ciência ao interessado\n\n(    ) Arquive-se"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="540" width="280" height="25" uuid="1d97f778-60c4-4709-a6f1-da1086fbbd95"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quartel em São Luís - MA, _____/_____/_____"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="540" width="265" height="40" uuid="6920a189-3157-4ead-9d38-78ea30373fdf"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["___________________________\nComandante Geral da PMMA"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="610" width="555" height="1" uuid="1b31dde3-f8c5-4484-814e-92c9c1372a98">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="620" width="555" height="30" uuid="577f8d60-5c29-46bc-a8d4-bf08e2b092cb"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["OUTRAS PROVIDÊNCIAS EFETUADAS"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="770" width="239" height="25" uuid="f7834783-4f80-44ac-958c-c152efd273b1"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quartel em, _____/_____/_____"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="765" width="244" height="35" uuid="e91a09ef-65d4-4ba9-b74b-5ea18ba540d6"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["____________________________\nAssinatura do Oficial Responsável"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

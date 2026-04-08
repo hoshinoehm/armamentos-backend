@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="requerimento_cautela_externa" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="56" rightMargin="28" topMargin="20" bottomMargin="20" uuid="d7d60b96-8bcc-4ed6-862c-a1cc2e63600a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="cidade" class="java.lang.String"/>
+	<parameter name="estado" class="java.lang.String"/>
+	<parameter name="especie" class="java.lang.String"/>
+	<parameter name="marca" class="java.lang.String"/>
+	<parameter name="calibre" class="java.lang.String"/>
+	<parameter name="dataEntrega" class="java.lang.String"/>
+	<parameter name="postoGraduacao" class="java.lang.String"/>
+	<parameter name="quadro" class="java.lang.String"/>
+	<parameter name="nomeCompleto" class="java.lang.String"/>
+	<parameter name="identificacaoCompleta" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<pageHeader>
+		<band height="141" splitType="Stretch">
+			<image>
+				<reportElement x="454" y="0" width="57" height="50" uuid="010b571e-9582-47fb-8a45-8f8083497870"/>
+				<imageExpression><![CDATA["reports/img/brasao_ma.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="220" y="0" width="70" height="60" uuid="13a7899b-c4f4-47ea-9ed1-33c8cfbe7374"/>
+				<imageExpression><![CDATA["reports/img/logo_institucional.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="50" height="50" uuid="95f50d67-159e-4d6e-837b-1e8e68f8a047"/>
+				<imageExpression><![CDATA["reports/img/logo_pmma.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="60" width="511" height="49" uuid="68088681-5f69-4bbb-8a46-4c34d567dc10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO DO MARANHÃO
+SECRETARIA DE ESTADO DA SEGURANÇA PÚBLICA
+POLÍCIA MILITAR DO MARANHÃO
+COMANDO DE POLICIAMENTO DE ÁREA DO INTERIOR - 8
+31º BATALHÃO DE POLÍCIA MILITAR
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="511" height="20" uuid="98e61638-3cdd-4233-81a2-660746f8cd89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Rua Sete de Setembro S/N – Centro, CEP: 65.284-00 – Governador Nunes Freire – MA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="133" width="511" height="1" uuid="efba8b56-aa17-4685-b096-cc96ba82745a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="661" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="70" width="510" height="367" uuid="2bda3abf-059f-4597-be49-a3eb8212cb56"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="DejaVu Sans" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando os termos favoráveis do parecer da TENENTE CORONEL QOPM <b>Neildon</b> Silva Frazão, Comandante do 31º BPM, referente à concessão ao requerente, "+$P{identificacaoCompleta}+", da cautela de uma "+$P{especie}+" "+$P{marca}+" "+$P{calibre}+";<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando que o requerente é conhecedor do que dispõem as portarias nº 002/2006-GCG e 001/2010-CPM, no tocante aos seus direitos, obrigações e penalidades;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando que o requerente preencheu os requisitos da Portaria nº 002/2006-GCG, de 30/01/2006 (BG nº 022, de 31/01/2006), a Portaria nº 001/2010-CPM, de 27/04/2010 (BG nº 082, de 05/05/2010), e a Portaria nº 014/2023-GCG, de 07/03/2023 (BG nº 053, de 20/03/2023), para concessão de cautela de uma "+$P{especie}+" "+$P{marca}+" "+$P{calibre}+", para uso fora do horário de turno/jornada de trabalho, em especial o que dispõem o art. 3º, §§ 3º, 11, 12, 13 e 14;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concordo com o parecer e acato as alegações do requerente, os documentos comprobatórios juntados e a ausência de registro de envolvimento do requerente em situações que inviabilizariam o atendimento do seu pedido."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="437" width="511" height="30" uuid="3e86f613-fd5b-4978-922d-fe3e73c1b929"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CPAI/8, em Santa Inês/MA, "+$P{dataEntrega}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="510" height="70" uuid="1efdd745-18f1-4c5f-8f18-d034b75796c1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONCORDO DO COMANDANTE DO CPAI/8 REFERENTE AO REQUERIMENTO DO "+$P{identificacaoCompleta}+" PARA CONCESSÃO DE CAUTELA DE ARMA DE FOGO PARA USO FORA DO HORÁRIO DE TURNO/JORNADA DE TRABALHO"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="580" width="511" height="30" uuid="a3466411-1a18-4655-bfc9-77d1d6e74060"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="DejaVu Sans" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ten. Cel. QOPM <b>Marcos </b>Aurélio Lindoso de <b> Brito </b><br/>Comandante do CPAI/8"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

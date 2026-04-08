@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="requerimento_cautela_externa" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="56" rightMargin="28" topMargin="20" bottomMargin="20" uuid="d7d60b96-8bcc-4ed6-862c-a1cc2e63600a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="cidade" class="java.lang.String"/>
+	<parameter name="estado" class="java.lang.String"/>
+	<parameter name="especie" class="java.lang.String"/>
+	<parameter name="marca" class="java.lang.String"/>
+	<parameter name="calibre" class="java.lang.String"/>
+	<parameter name="dataEntrega" class="java.lang.String"/>
+	<parameter name="postoGraduacao" class="java.lang.String"/>
+	<parameter name="quadro" class="java.lang.String"/>
+	<parameter name="nomeCompleto" class="java.lang.String"/>
+	<parameter name="identificacaoCompleta" class="java.lang.String"/>
+	<parameter name="cautelaId" class="java.lang.Long"/>
+	<parameter name="anoEntrega" class="java.lang.Integer"/>
+	<parameter name="modelo" class="java.lang.String"/>
+	<parameter name="numeroSerie" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<pageHeader>
+		<band height="141" splitType="Stretch">
+			<image>
+				<reportElement x="454" y="0" width="57" height="50" uuid="010b571e-9582-47fb-8a45-8f8083497870"/>
+				<imageExpression><![CDATA["reports/img/brasao_ma.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="220" y="0" width="70" height="60" uuid="13a7899b-c4f4-47ea-9ed1-33c8cfbe7374"/>
+				<imageExpression><![CDATA["reports/img/logo_institucional.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="50" height="50" uuid="95f50d67-159e-4d6e-837b-1e8e68f8a047"/>
+				<imageExpression><![CDATA["reports/img/logo_pmma.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="60" width="511" height="49" uuid="68088681-5f69-4bbb-8a46-4c34d567dc10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO DO MARANHÃO
+SECRETARIA DE ESTADO DA SEGURANÇA PÚBLICA
+POLÍCIA MILITAR DO MARANHÃO
+COMANDO DE POLICIAMENTO DE ÁREA DO INTERIOR - 8
+31º BATALHÃO DE POLÍCIA MILITAR
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="511" height="20" uuid="98e61638-3cdd-4233-81a2-660746f8cd89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Rua Sete de Setembro S/N – Centro, CEP: 65.284-00 – Governador Nunes Freire – MA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="133" width="511" height="1" uuid="efba8b56-aa17-4685-b096-cc96ba82745a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="661" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="70" width="510" height="367" uuid="2bda3abf-059f-4597-be49-a3eb8212cb56"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="DejaVu Sans" size="10"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando os índices de violência que assolam nosso Estado;<br/>"
+		+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando que a profissão policial militar, nos coloca em potencial situação de perigo, passando por um risco maior que o cidadão comum.<br/>"
+		+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando a atividade desempenhada como Praça do 31º BPM na região do Alto Turi e Gurupi, que nos coloca diuturnamente em risco, em virtude de sermos acionados a qualquer tempo para solucionar situações conflituosas de diversas naturezas e que ainda minha moradia ser em "
+		+ $P{cidade} + " - " + $P{estado} + ", e em algumas situações, tenho que chegar ou sair cedo ou tarde em virtude do serviço;<br/>"
+		+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando o que consta no parágrafo 10º, do Art. 2º, da Portaria nº 024-GCG, que permite, excepcionalmente, o militar com cautela de armamento permanecer com a mesma em caso de afastamentos superiores a 08 (oito) dias, devidamente autorizado pelo Comandante de Policiamento de Área.<br/>"
+		+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando que estou plenamente ciente do que dispõem as portarias nº 002/2006-GCG e 001/2010-CPM, no tocante aos meus direitos, obrigações e penalidades;<br/>"
+		+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diante do acima exposto, solicito a Vossa Senhoria a concessão da permanência de cautela (CAUTELA DE ARMA DE FOGO Nº "
+		+ $P{cautelaId} + " / " + $P{anoEntrega} + " – 31º BPM) que a este requerente foi designado de uma "
+		+ $P{especie} + " " + $P{marca} + " " + $P{modelo} + " calibre " + $P{calibre} + ", nº " + $P{numeroSerie} + " ACAF s/nº, expedida em " + $P{dataEntrega} + ", com validade por tempo indeterminado, para uso pessoal deste requerente em casos de afastamentos da atividade policial acima de 08 (oito) dias, nos termos dos dispositivos legais vigentes."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="510" height="70" uuid="1efdd745-18f1-4c5f-8f18-d034b75796c1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["REQUERIMENTO PARA PERMANÊNCIA DE CAUTELA DE ARMAMENTO EM CASO DE AFASTAMENTO SUPERIOR A 08 (OITO) DIAS DA ATIVIDADE POLICIAL"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="506" width="511" height="30" uuid="a3466411-1a18-4655-bfc9-77d1d6e74060"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="DejaVu Sans" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{identificacaoCompleta}+"<br/>Requerente"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="459" width="511" height="38" uuid="18c88007-246f-4a69-aac4-00504b1b9fa7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quartel do 31º BPM, em Governador Nunes Freire - MA, "+$P{dataEntrega}+"."]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="570" width="140" height="80" backcolor="rgba(255, 255, 255, 0.0)" uuid="d79dd00c-fb70-4bd8-91cc-e3a4e3279feb"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="570" width="140" height="19" uuid="479d57ce-de05-4c04-ac27-fbdc4f2ef307"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONCORDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="570" width="140" height="19" uuid="a554bb07-6188-48f4-bf2a-663aacf18ee2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIZO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="570" width="140" height="19" uuid="27a7e240-447e-49c1-a689-8827ab366de2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VISTO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="584" width="140" height="30" uuid="68cb058d-5432-4436-b23a-d16689f430a0"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em: _____/____/______ "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="630" width="140" height="20" uuid="7b4152f0-9876-480f-ba4b-0aa0e202fd57"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Comandante do 31º BPM]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="634" width="130" height="1" uuid="70e76e1d-9192-4c2a-b314-a653e386b625">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="190" y="634" width="130" height="1" uuid="75f918f3-45db-4322-a8ee-5841d9f14e14">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="185" y="630" width="140" height="20" uuid="1a9a70a2-9e56-4447-85b1-3ed9003e03dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Comandante do CPAI/8]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="185" y="584" width="140" height="30" uuid="342082f0-0ed8-4e1d-8345-ec6d9d6204ab"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em: _____/____/______ "]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="185" y="570" width="140" height="80" backcolor="rgba(255, 255, 255, 0.0)" uuid="4f3a6aad-c20d-42a1-8ba0-1d005133ef29"/>
+			</rectangle>
+			<line>
+				<reportElement x="375" y="634" width="130" height="1" uuid="1c772b37-cb9a-4e2c-8cb1-80552d8a0e99">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="370" y="630" width="140" height="20" uuid="da18eebf-5695-4539-9426-316a3e40aee7"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[P/4 do 31º BPM]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="584" width="140" height="30" uuid="1b00e5bc-4d77-4065-93f3-4ef3d768b7ac"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em: _____/____/______ "]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="370" y="570" width="140" height="80" backcolor="rgba(255, 255, 255, 0.0)" uuid="c816fc45-39e9-47bb-ab26-173cf58ec32e"/>
+			</rectangle>
+		</band>
+	</detail>
+</jasperReport>

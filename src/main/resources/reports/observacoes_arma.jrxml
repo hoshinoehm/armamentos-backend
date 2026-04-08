@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="requerimento_cautela_externa" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="56" rightMargin="28" topMargin="20" bottomMargin="20" uuid="d7d60b96-8bcc-4ed6-862c-a1cc2e63600a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="dataEntrega" class="java.lang.String"/>
+	<parameter name="identificacaoCompleta" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="511" height="30" uuid="97bfc47d-de9f-4f83-a4b4-ad3b1e071f4a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[OBSERVAÇÕES SOBRE A ARMA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="0" width="511" height="802" backcolor="rgba(255, 255, 255, 0.0)" uuid="de5ac7ed-e3b4-4289-bfcd-f53387bd2530"/>
+			</rectangle>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="400" width="511" height="30" uuid="a3466411-1a18-4655-bfc9-77d1d6e74060"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{identificacaoCompleta}+"<br/>RESPONSÁVEL PELO ARMAMENTO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="330" width="511" height="30" uuid="18c88007-246f-4a69-aac4-00504b1b9fa7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quartel do 31º BPM, em Governador Nunes Freire - MA, "+$P{dataEntrega}+"."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="492" width="170" height="29" uuid="c5bb8585-07b9-47ba-9c2d-4b0caf14a9d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEBIMENTO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="20" y="492" width="170" height="210" backcolor="rgba(255, 255, 255, 0.0)" uuid="7deb342b-7cb1-45d5-8230-27ee7475e509"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="20" y="573" width="170" height="19" uuid="b1a40c8d-82b2-475b-8916-0cde19ee0ea0"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Portador]]></text>
+			</staticText>
+			<line>
+				<reportElement x="30" y="572" width="150" height="1" uuid="3da90c2c-9c14-4ddd-bbf5-58c8858e0feb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="20" y="522" width="170" height="19" uuid="276e1791-e6f3-4a2b-8926-05ac053689bf"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em: _____/____/______ "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="662" width="170" height="30" uuid="b8da0bc1-9392-48f9-b64b-8d71cf67362f"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Armeiro
+Graduação/nº/nome completo legível]]></text>
+			</staticText>
+			<line>
+				<reportElement x="30" y="661" width="150" height="1" uuid="8a83a86a-c893-43f6-9354-f9723be3c1d8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="320" y="662" width="170" height="30" uuid="4b1f3a08-ae0f-445b-a98c-5940ed5c74b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Armeiro
+Graduação/nº/nome completo legível]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="492" width="170" height="29" uuid="fbb5e460-0ca8-4df1-a3fc-17fcd3c692e7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEVOLUÇÃO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="522" width="170" height="19" uuid="9e2f7c37-be70-466a-b270-74f537a4e9c1"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em: _____/____/______ "]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="320" y="492" width="170" height="210" backcolor="rgba(255, 255, 255, 0.0)" uuid="5277c8fc-3d7a-4a7f-b5b2-28ed259dfd21"/>
+			</rectangle>
+			<line>
+				<reportElement x="330" y="661" width="150" height="1" uuid="ed64f327-5191-4eb4-b912-f1501f3d7cd7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="320" y="573" width="170" height="19" uuid="255ff9f3-37a0-4c4d-a73a-fa9aa52def5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Portador]]></text>
+			</staticText>
+			<line>
+				<reportElement x="330" y="572" width="150" height="1" uuid="91f467d3-83fd-4f8d-a2c4-a7cbab77189f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="10" y="70" width="499" height="210" uuid="e15d8fa7-6000-4dfc-9a82-cbf526b882ad"/>
+				<box leftPadding="4"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="DejaVu Sans" size="11"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Declaro que:<br/>1. Recebi a arma, equipamentos, acessórios e munição descritos nesta cautela em perfeito estado;<br/>2. Responsabilizar-me-ei pelo seu uso e conservação;<br/>3. Devo me apresentar à seção responsável para apresentação deste armamento e materiais junto a ele cautelados para inspeção e a fim de renovar esta cautela a cada 30 (trinta) dias após a sua expedição;<br/>4. Portarei a CI junto com a ACAF correspondente;<br/>5. Estou plenamente ciente do que dispõem as Portarias nº 002/2006–GCG e 001/2010–CPM, no tocante aos meus direitos, obrigações e penalidades.<br/>6. A cautela desta arma de fogo pode ser confirmada no Livro de Controle de Amamento e Munição (L1-MA) que se encontra na 4ª Seção do 31º BPM, na página 1, ordem 7."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="73" y="400" width="364" height="1" uuid="30a8718f-0d3c-450b-8805-6e2435e2e5d8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

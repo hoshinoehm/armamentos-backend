@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="requerimento_cautela_externa" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="56" rightMargin="28" topMargin="20" bottomMargin="20" uuid="d7d60b96-8bcc-4ed6-862c-a1cc2e63600a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="cidade" class="java.lang.String"/>
+	<parameter name="estado" class="java.lang.String"/>
+	<parameter name="especie" class="java.lang.String"/>
+	<parameter name="marca" class="java.lang.String"/>
+	<parameter name="calibre" class="java.lang.String"/>
+	<parameter name="dataEntrega" class="java.lang.String"/>
+	<parameter name="postoGraduacao" class="java.lang.String"/>
+	<parameter name="quadro" class="java.lang.String"/>
+	<parameter name="nomeCompleto" class="java.lang.String"/>
+	<parameter name="identificacaoCompleta" class="java.lang.String"/>
+	<parameter name="cautelaId" class="java.lang.Long"/>
+	<parameter name="anoEntrega" class="java.lang.Integer"/>
+	<parameter name="modelo" class="java.lang.String"/>
+	<parameter name="numeroSerie" class="java.lang.String"/>
+	<parameter name="nomeGuerra" class="java.lang.String"/>
+	<parameter name="matricula" class="java.lang.String"/>
+	<parameter name="rgMilitar" class="java.lang.String"/>
+	<parameter name="subUnidade" class="java.lang.String"/>
+	<parameter name="numeroTiro" class="java.lang.String"/>
+	<parameter name="tombo" class="java.lang.String"/>
+	<parameter name="quantidadeCarregadores" class="java.lang.Integer"/>
+	<parameter name="estadoConservacao" class="java.lang.String"/>
+	<parameter name="cano" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<pageHeader>
+		<band height="141" splitType="Stretch">
+			<image>
+				<reportElement x="454" y="0" width="57" height="50" uuid="010b571e-9582-47fb-8a45-8f8083497870"/>
+				<imageExpression><![CDATA["reports/img/brasao_ma.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="220" y="0" width="70" height="60" uuid="13a7899b-c4f4-47ea-9ed1-33c8cfbe7374"/>
+				<imageExpression><![CDATA["reports/img/logo_institucional.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="50" height="50" uuid="95f50d67-159e-4d6e-837b-1e8e68f8a047"/>
+				<imageExpression><![CDATA["reports/img/logo_pmma.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="60" width="511" height="49" uuid="68088681-5f69-4bbb-8a46-4c34d567dc10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO DO MARANHÃO
+SECRETARIA DE ESTADO DA SEGURANÇA PÚBLICA
+POLÍCIA MILITAR DO MARANHÃO
+COMANDO DE POLICIAMENTO DE ÁREA DO INTERIOR - 8
+31º BATALHÃO DE POLÍCIA MILITAR
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="511" height="20" uuid="98e61638-3cdd-4233-81a2-660746f8cd89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Rua Sete de Setembro S/N – Centro, CEP: 65.284-00 – Governador Nunes Freire – MA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="133" width="511" height="1" uuid="efba8b56-aa17-4685-b096-cc96ba82745a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="661" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="510" height="30" uuid="1efdd745-18f1-4c5f-8f18-d034b75796c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CAUTELA DE ARMA DE FOGO Nº "+$P{cautelaId}+"/"+$P{anoEntrega}+" – 31º BPM"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="30" width="140" height="80" backcolor="rgba(255, 255, 255, 0.0)" uuid="d79dd00c-fb70-4bd8-91cc-e3a4e3279feb"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="30" width="140" height="19" uuid="479d57ce-de05-4c04-ac27-fbdc4f2ef307"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONCORDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="30" width="140" height="19" uuid="a554bb07-6188-48f4-bf2a-663aacf18ee2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIZO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="30" width="140" height="19" uuid="27a7e240-447e-49c1-a689-8827ab366de2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VISTO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="44" width="140" height="30" uuid="68cb058d-5432-4436-b23a-d16689f430a0"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em: _____/____/______ "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="90" width="140" height="20" uuid="7b4152f0-9876-480f-ba4b-0aa0e202fd57"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Comandante do 31º BPM]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="94" width="130" height="1" uuid="70e76e1d-9192-4c2a-b314-a653e386b625">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="190" y="94" width="130" height="1" uuid="75f918f3-45db-4322-a8ee-5841d9f14e14">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="185" y="90" width="140" height="20" uuid="1a9a70a2-9e56-4447-85b1-3ed9003e03dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Comandante do CPAI/8]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="185" y="44" width="140" height="30" uuid="342082f0-0ed8-4e1d-8345-ec6d9d6204ab"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em: _____/____/______ "]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="185" y="30" width="140" height="80" backcolor="rgba(255, 255, 255, 0.0)" uuid="4f3a6aad-c20d-42a1-8ba0-1d005133ef29"/>
+			</rectangle>
+			<line>
+				<reportElement x="375" y="94" width="130" height="1" uuid="1c772b37-cb9a-4e2c-8cb1-80552d8a0e99">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="370" y="90" width="140" height="20" uuid="da18eebf-5695-4539-9426-316a3e40aee7"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[P/4 do 31º BPM]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="44" width="140" height="30" uuid="1b00e5bc-4d77-4065-93f3-4ef3d768b7ac"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em: _____/____/______ "]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="370" y="30" width="140" height="80" backcolor="rgba(255, 255, 255, 0.0)" uuid="c816fc45-39e9-47bb-ab26-173cf58ec32e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="140" width="510" height="123" backcolor="rgba(255, 255, 255, 0.0)" uuid="756f32ad-b010-47f3-ab9e-b305a1b32903"/>
+			</rectangle>
+			<line>
+				<reportElement x="0" y="156" width="510" height="1" uuid="e259a6bb-fcf1-42ad-b356-509cc1b02ffe">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="140" width="511" height="17" uuid="64e76df7-8c24-4a93-a88b-df32f9e42b96"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DADOS DO PORTADOR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="177" width="510" height="1" uuid="82e30ecf-651d-4dfd-a9ed-abc3a8fa2d67">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="1" y="197" width="510" height="1" uuid="ee601a0f-6035-406f-bdb7-3b6285551a27">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="242" width="510" height="1" uuid="cabd33b7-2d69-4b8b-884e-e18cee9446ea">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="157" width="170" height="20" uuid="e66eabe3-0040-4328-ba1d-20dc303fe0f7"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Posto/Graduação: "+$P{postoGraduacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="157" width="170" height="20" uuid="89570c6b-b8b7-4920-8fa9-20ad55b41e12"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quadro: "+$P{quadro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="157" width="170" height="20" uuid="6e36fb86-1298-434a-b0fc-3dc11613b634"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nº: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="177" width="511" height="20" uuid="2d7a8efc-626f-4005-ba5b-b307e685ca1d"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nome completo: "+$P{nomeCompleto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="198" width="170" height="44" uuid="dcce60b7-6e67-47dc-a49f-c19172bda3e9"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nome de guerra: "+$P{nomeGuerra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="198" width="170" height="22" uuid="155c3a2d-58c2-4ea5-8a27-3247ed471aa7"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Matrícula: "+$P{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="220" width="170" height="22" uuid="35f01782-1c9f-41e0-b574-888ba6736d2e"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ID: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="197" width="170" height="45" uuid="ca14f1ed-2837-4eda-8ff3-ef8ff082bc69"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["RG: "+$P{rgMilitar}+"-PMMA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="243" width="511" height="20" uuid="9feab0cf-6f8a-4d5f-9c65-a36a1112275b"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Setor: CPAI-8/ 31º BPM / "+$P{subUnidade}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="170" y="157" width="1" height="20" uuid="0cf0abbc-0d97-44d1-ad70-1a3774f96ba9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="340" y="157" width="1" height="20" uuid="b7d753b5-04a8-49b8-9ceb-9a1c31518ea1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="170" y="198" width="1" height="44" uuid="80b30dc8-f0c7-432a-aa46-b607a66da85b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="340" y="198" width="1" height="44" uuid="f089bff5-30f0-4554-9f50-df06277a1365">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<rectangle>
+				<reportElement x="0" y="280" width="510" height="370" backcolor="rgba(255, 255, 255, 0.0)" uuid="85eb73c2-2a2e-44a0-89b7-e9d8e5383d03"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="280" width="511" height="17" uuid="aa6232b2-a2fc-4290-af92-0af7b20c56f6"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DADOS DO PORTADOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="297" width="137" height="20" uuid="bf863cfa-740e-4e03-b41b-735e00782794"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Espécie: "+$P{especie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="297" width="112" height="20" uuid="1a6705b4-c50c-4b15-820d-30f9e728944f"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Marca: "+$P{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="297" width="120" height="20" uuid="c80c1ff1-99e6-420d-9616-b9d37388e891"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Calibre: "+$P{calibre}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="137" y="297" width="1" height="20" uuid="59dd7952-894f-41ac-b34e-5a6cb4ede219">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="390" y="297" width="1" height="20" uuid="23eb1909-093b-4fe7-91a7-0d762fc56a84">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="250" y="297" width="140" height="20" uuid="559e3010-8adf-4df6-9e0d-425324661b3e"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Modelo: "+$P{modelo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="317" width="510" height="1" uuid="f6755bd0-85a2-41ff-ab08-13ad02168147">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="297" width="510" height="1" uuid="3fc0602c-e9e4-40fa-a8db-511954b27e0b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="250" y="297" width="1" height="20" uuid="13d4bdaf-fad1-4e77-978b-f54acfbf16f3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="1" y="317" width="137" height="20" uuid="11f22a15-e5ed-4702-8878-37aa78abcb82"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Capacidade de tiros: "+$P{numeroTiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="317" width="112" height="20" uuid="4148aac4-ffa0-4bee-843f-16c67288f39e"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cano: "+$P{cano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="317" width="120" height="20" uuid="8192e346-ffcd-4d4e-9948-322539df5a0f"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tombo: "+$P{tombo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="137" y="317" width="1" height="20" uuid="720e0d68-742a-434b-9d7c-5a3d9ccac9c2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="390" y="317" width="1" height="20" uuid="336a1971-1ef3-4698-94ba-a615ffd3da97">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="250" y="317" width="140" height="20" uuid="92d344a1-0f7f-4b0d-af79-e6b075a817bb"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nº da Arma: "+$P{numeroSerie}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="337" width="510" height="1" uuid="a62db665-c0ae-4734-92e7-06aa6a4e902d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="317" width="510" height="1" uuid="efa189a9-cc0b-4099-90a4-c5d66d29de48">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="250" y="317" width="1" height="20" uuid="8c491864-9789-44e4-a1d4-c573cdfef7f7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="1" y="337" width="249" height="20" uuid="327250e9-309d-43d9-9173-b59cd37120d7"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Estado de conservação: "+$P{estadoConservacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="338" width="259" height="20" uuid="f649c651-9027-4499-bf7d-5935ccb4c081"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quantidade de carregador:  "+$P{quantidadeCarregadores}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="250" y="338" width="1" height="20" uuid="3807c14c-500a-46da-8b75-a8fc4a5d5e1c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="357" width="510" height="1" uuid="454a4a36-7511-4131-85ab-f72a5889f2b9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="370" width="511" height="30" uuid="b8ad1c5b-3750-47c8-a8a6-7798dd54eacf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EQUIPAMENTOS E ACESSÓRIOS ENTREGUES COM A ARMA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="417" width="511" height="23" uuid="aa0eb616-2c54-4a6d-9ea3-58d31f85a38c"/>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Entrega: "+$P{dataEntrega}+"          ______________________________________"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="5" y="440" width="474" height="190" uuid="282071eb-224a-4325-a982-f221cd5e1fef"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="DejaVu Sans" size="10"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1ª Vistoria: ____ /____ / ______          ______________________________________<br/>2ª Vistoria: ____ /____ / ______          ______________________________________<br/>3ª Vistoria: ____ /____ / ______          ______________________________________<br/>4ª Vistoria: ____ /____ / ______          ______________________________________<br/>5ª Vistoria: ____ /____ / ______          ______________________________________<br/>6ª Vistoria: ____ /____ / ______          ______________________________________<br/>7ª Vistoria: ____ /____ / ______          ______________________________________<br/>8ª Vistoria: ____ /____ / ______          ______________________________________<br/>9ª Vistoria: ____ /____ / ______          ______________________________________<br/>10ª Vistoria: ____ /____ / ______          ______________________________________<br/>11ª Vistoria: ____ /____ / ______          ______________________________________<br/>12ª Vistoria: ____ /____ / ______          ______________________________________"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="630" width="189" height="21" uuid="87830f3b-7fe3-4c49-ab74-cb9a994eb20e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[ACAF nº]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="630" width="189" height="21" uuid="685886e9-acc5-4c56-a7ea-c54c86947264"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[RUBRICAS]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
