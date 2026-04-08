@@ -62,7 +62,7 @@ public class SecurityConfigurations {
         configuration.setAllowedOrigins(List.of(
                 "http://localhost:3000",
                 "http://187.77.231.240:3000",
-                "https://sisacaf-frontend.wdvmmh.easypanel.host"
+                "https://armamentos-frontend.wdvmmh.easypanel.host"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
