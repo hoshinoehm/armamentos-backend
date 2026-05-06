@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="requerimento_cautela_externa" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="56" rightMargin="28" topMargin="20" bottomMargin="20" uuid="d7d60b96-8bcc-4ed6-862c-a1cc2e63600a">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="concordo_comandante" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="56" rightMargin="28" topMargin="20" bottomMargin="20" uuid="d7d60b96-8bcc-4ed6-862c-a1cc2e63600a">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -72,28 +72,32 @@ COMANDO DE POLICIAMENTO DE ÁREA DO INTERIOR - 8
 					<font fontName="DejaVu Sans" size="12"/>
 					<paragraph lineSpacing="1_1_2"/>
 				</textElement>
-				<textFieldExpression><![CDATA["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando os termos favoráveis do parecer da TENENTE CORONEL QOPM <b>Neildon</b> Silva Frazão, Comandante do 31º BPM, referente à concessão ao requerente, "+$P{identificacaoCompleta}+", da cautela de uma "+$P{especie}+" "+$P{marca}+" "+$P{calibre}+";<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando que o requerente é conhecedor do que dispõem as portarias nº 002/2006-GCG e 001/2010-CPM, no tocante aos seus direitos, obrigações e penalidades;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando que o requerente preencheu os requisitos da Portaria nº 002/2006-GCG, de 30/01/2006 (BG nº 022, de 31/01/2006), a Portaria nº 001/2010-CPM, de 27/04/2010 (BG nº 082, de 05/05/2010), e a Portaria nº 014/2023-GCG, de 07/03/2023 (BG nº 053, de 20/03/2023), para concessão de cautela de uma "+$P{especie}+" "+$P{marca}+" "+$P{calibre}+", para uso fora do horário de turno/jornada de trabalho, em especial o que dispõem o art. 3º, §§ 3º, 11, 12, 13 e 14;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concordo com o parecer e acato as alegações do requerente, os documentos comprobatórios juntados e a ausência de registro de envolvimento do requerente em situações que inviabilizariam o atendimento do seu pedido."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando os termos favoráveis do parecer do comandante imediato ao "+$P{identificacaoCompleta}+" referente à concessão ao requerente da cautela de uma "+$P{especie}+" "+$P{marca}+" cal "+$P{calibre}+";<br/>"
+        + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando que o requerente é conhecedor do que dispõe a Portaria nº 002/2006-GCG (BG nº 022, de 31/01/2006), a Portaria nº 024/2010-GCG (BG nº 094, de 21/05/2010), e a Portaria nº 051/2013-GCG (BG nº 217, de 12/11/2013), no tocante aos seus direitos, obrigações e penalidades;<br/>"
+        + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considerando que o requerente preencheu os requisitos da Portaria nº 002/2006-GCG, da Portaria nº 024/2010-GCG e da Portaria nº 051/2013-GCG, para concessão de cautela de uma "+$P{especie}+" "+$P{marca}+" cal "+$P{calibre}+", para uso fora do horário de turno/jornada de trabalho;<br/>"
+        + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concordo com o parecer e acato as alegações do requerente, os documentos comprobatórios juntados e a ausência de registro de envolvimento do requerente em situações que inviabilizariam o atendimento do seu pedido;<br/>"
+        + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faço remessa ao Sr. Cel. QOPM Comandante de Policiamento de Área do Interior 8 (CPAI-8), a quem compete a decisão final."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="437" width="511" height="30" uuid="3e86f613-fd5b-4978-922d-fe3e73c1b929"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA["CPAI/8, em Santa Inês/MA, "+$P{dataEntrega}+"."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Quartel do 31º BPM, em Gov. Nunes Freire - MA, "+$P{dataEntrega}+"."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="0" width="510" height="70" uuid="1efdd745-18f1-4c5f-8f18-d034b75796c1"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans" size="12" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["CONCORDO DO COMANDANTE DO CPAI/8 REFERENTE AO REQUERIMENTO DO "+$P{identificacaoCompleta}+" PARA CONCESSÃO DE CAUTELA DE ARMA DE FOGO PARA USO FORA DO HORÁRIO DE TURNO/JORNADA DE TRABALHO"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["CONCORDO DO COMANDANTE DA UPM REFERENTE AO REQUERIMENTO DO "+$P{identificacaoCompleta}+" PARA A CONCESSÃO DE CAUTELA DE ARMA DE FOGO PARA USO FORA DO HORÁRIO DE TURNO/JORNADA DE TRABALHO"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement x="0" y="580" width="511" height="30" uuid="a3466411-1a18-4655-bfc9-77d1d6e74060"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
 					<font fontName="DejaVu Sans" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Ten. Cel. QOPM <b>Marcos </b>Aurélio Lindoso de <b> Brito </b><br/>Comandante do CPAI/8"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["TC QOPM <b>Neildon</b> Silva Frazão<br/>Cmt do 31º BPM"]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
