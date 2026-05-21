@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page { size: A4; margin: 20px 28px 20px 56px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "DejaVu Sans", Arial, sans-serif; font-size: 11pt; color: #000; }
+        table { border-collapse: collapse; width: 100%; }
+        td { padding: 3px 4px; }
+        .titulo { font-size: 11pt; font-weight: normal; text-align: center; margin: 10px 0 12px 0; }
+        p.declaracao { text-align: justify; font-size: 10pt; margin-bottom: 8px; }
+        .assinatura { text-align: center; font-size: 11pt; margin-top: 40px; }
+        .assinatura .linha { border-top: 1px solid #000; width: 60%; margin: 0 auto 4px; }
+    </style>
+</head>
+<body>
+
+        <table style="width:100%; border-collapse:collapse; margin-bottom:4px;">
+        <tr>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/logo_pmma.png" alt="PMMA" style="width:50px; height:50px;"/>
+            </td>
+            <td style="vertical-align:middle; padding:0; text-align:center;">
+                <img src="img/logo_institucional.png" alt="31 BPM"
+                     style="width:60px; height:60px; display:block; margin:0 auto 4px auto;"/>
+                <div style="font-size:10pt; font-weight:bold; line-height:1.45;">
+                    ESTADO DO MARANH&#195;O<br/>
+                    SECRETARIA DE ESTADO DA SEGURAN&#199;A P&#218;BLICA<br/>
+                    POL&#205;CIA MILITAR DO MARANH&#195;O<br/>
+                    COMANDO DO POLICIAMENTO DO INTERIOR - CPAI/8<br/>
+                    31&#186; BATALH&#195;O DE POL&#205;CIA MILITAR<br/>
+                    P/4
+                </div>
+                <div style="font-size:8.5pt; font-weight:normal; margin-top:4px; text-align:center;">
+                    Rua 7 de Setembro, S/N &#8211; Centro, CEP: 65.284-000 &#8211; Governador Nunes Freire &#8211; MA
+                </div>
+            </td>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/brasao_ma.png" alt="MA"
+                     style="width:50px; height:50px; display:block; margin-left:auto;"/>
+            </td>
+        </tr>
+    </table>
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+    <div style="border:1px solid #000; padding:8px;">
+
+        <div class="titulo">OBSERVA&#199;&#213;ES SOBRE A ARMA</div>
+
+        <p class="declaracao">Declaro que:</p>
+        <p class="declaracao">1. Recebi a arma, equipamentos, acess&#243;rios e muni&#231;&#227;o descritos nesta cautela em perfeito estado;</p>
+        <p class="declaracao">2. Responsabilizar-me-ei pelo seu uso e conserva&#231;&#227;o;</p>
+        <p class="declaracao">3. Devo me apresentar &#224; se&#231;&#227;o respons&#225;vel para apresenta&#231;&#227;o deste armamento e materiais junto a ele cautelados para inspe&#231;&#227;o e a fim de renovar esta cautela a cada 30 (trinta) dias ap&#243;s a sua expedi&#231;&#227;o;</p>
+        <p class="declaracao">4. Portarei a CI junto com a ACAF correspondente;</p>
+        <p class="declaracao">5. Estou plenamente ciente do que disp&#245;em as Portarias n&#186; 002/2006&#8211;GCG e 001/2010&#8211;CPM, no tocante aos meus direitos, obriga&#231;&#245;es e penalidades.</p>
+        <p class="declaracao">6. A cautela desta arma de fogo pode ser confirmada no Livro de Controle de Armamento e Muni&#231;&#227;o (L1-MA) que se encontra na 4&#170; Se&#231;&#227;o do 31&#186; BPM.</p>
+
+        <p style="text-align:center; font-size:11pt; margin-top:24px;">
+            Quartel do 31&#186; BPM, em Governador Nunes Freire - MA, <span th:text="${r.dataRequerimento}"></span>.
+        </p>
+
+        <div class="assinatura">
+            <div class="linha"></div>
+            <span th:text="${r.identificacaoCompleta}"></span><br/>
+            RESPONS&#193;VEL PELO ARMAMENTO
+        </div>
+
+        <!-- Boxes RECEBIMENTO / DEVOLUÇÃO -->
+        <table style="width:80%; border-collapse:collapse; margin: 40px auto 0 auto;">
+            <tr>
+                <td style="width:50%; border:1px solid #000; text-align:center; padding:8px; vertical-align:top;">
+                    <div style="font-weight:bold; font-size:11pt; margin-bottom:6px;">RECEBIMENTO</div>
+                    <div style="font-size:10pt;">Em: _____/____/______</div>
+                    <div style="height:40px;"></div>
+                    <div style="border-top:1px solid #000; padding-top:2px; font-size:9pt;">
+                        Portador
+                    </div>
+                    <div style="height:30px;"></div>
+                    <div style="border-top:1px solid #000; padding-top:2px; font-size:9pt;">
+                        Armeiro<br/>Gradua&#231;&#227;o/n&#186;/nome completo leg&#237;vel
+                    </div>
+                </td>
+                <td style="width:50%; border:1px solid #000; text-align:center; padding:8px; vertical-align:top;">
+                    <div style="font-weight:bold; font-size:11pt; margin-bottom:6px;">DEVOLU&#199;&#195;O</div>
+                    <div style="font-size:10pt;">Em: _____/____/______</div>
+                    <div style="height:40px;"></div>
+                    <div style="border-top:1px solid #000; padding-top:2px; font-size:9pt;">
+                        Portador
+                    </div>
+                    <div style="height:30px;"></div>
+                    <div style="border-top:1px solid #000; padding-top:2px; font-size:9pt;">
+                        Armeiro<br/>Gradua&#231;&#227;o/n&#186;/nome completo leg&#237;vel
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>

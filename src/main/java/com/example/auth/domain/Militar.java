@@ -1,6 +1,7 @@
 package com.example.auth.domain;
 
 
+import com.example.auth.domain.enums.Comportamento;
 import com.example.auth.domain.enums.PostoGraduacao;
 import com.example.auth.domain.enums.Quadro;
 import com.example.auth.domain.enums.Sexo;
@@ -83,4 +84,10 @@ public class Militar {
     private String numeroCasa;
     private String bairro;
     private String enderecoCompleto;
+
+    @Enumerated(EnumType.STRING)
+    private Comportamento comportamento;
+
+    @Column(name = "situacao_juridica")
+    private String situacaoJuridica;
 }

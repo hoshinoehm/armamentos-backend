@@ -174,7 +174,9 @@ public class ControleArmamentoService {
         dto.setMatricula(militar.getMatricula());
         dto.setCpf(militar.getCpf());
         dto.setRgMilitar(militar.getRgMilitar());
-        dto.setPostoGraduacao(militar.getPostoGraduacao() != null ? militar.getPostoGraduacao().name() : "N/A");
+        String postoLabel = militar.getPostoGraduacao() != null ? militar.getPostoGraduacao().getLabel() : "";
+        String quadroLabel = militar.getQuadro() != null ? militar.getQuadro().name() : "";
+        dto.setPostoGraduacao((postoLabel + " " + quadroLabel).trim());
         dto.setQuadro(militar.getQuadro() != null ? militar.getQuadro().name() : "N/A");
         dto.setDataNascimento(militar.getDataNascimento() != null
                 ? militar.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
@@ -187,6 +189,12 @@ public class ControleArmamentoService {
         dto.setSubUnidade(
                 militar.getSubUnidade() != null ? militar.getSubUnidade().getNome() : "Não informado"
         );
+
+        dto.setDataInclusao(militar.getDataInclusao() != null
+                ? militar.getDataInclusao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+                : null);
+        dto.setComportamento(militar.getComportamento() != null ? militar.getComportamento().getLabel() : null);
+        dto.setSituacaoJuridica(militar.getSituacaoJuridica());
 
         // Endereço completo: preferencialmente o campo direto
         if (militar.getEnderecoCompleto() != null && !militar.getEnderecoCompleto().isBlank()) {
@@ -210,7 +218,7 @@ public class ControleArmamentoService {
         }
 
         dto.setIdentificacaoCompleta(
-                (militar.getPostoGraduacao() != null ? militar.getPostoGraduacao().name() : "") + " " +
+                (militar.getPostoGraduacao() != null ? militar.getPostoGraduacao().getLabel() : "") + " " +
                         (militar.getQuadro() != null ? militar.getQuadro().name() : "") + " " +
                         militar.getNomeCompleto()
         );

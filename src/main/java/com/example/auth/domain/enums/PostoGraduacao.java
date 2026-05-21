@@ -1,21 +1,21 @@
 package com.example.auth.domain.enums;
 
-
 public enum PostoGraduacao {
 
-    SOLDADO("Soldado"),
-    CABO("Cabo"),
-    TERCEIRO_SARGENTO("3° Sargento"),
-    SEGUNDO_SARGENTO("2° Sargento"),
-    PRIMEIRO_SARGENTO("1° Sargento"),
-    SUBTENENTE("Subtenente"),
-    ASPIRANTE("Aspirante"),
-    SEGUNDO_TENENTE("2° Tenente"),
-    PRIMEIRO_TENENTE("1° Tenente"),
-    CAPITAO("Capitão"),
-    MAJOR("Major"),
-    TENENTE_CORONEL("Tenente-Coronel"),
-    CORONEL("Coronel");
+    CORONEL("CEL"),
+    TENENTE_CORONEL("TC"),
+    MAJOR("MAJ"),
+    CAPITAO("CAP"),
+    PRIMEIRO_TENENTE("1º TEN"),
+    SEGUNDO_TENENTE("2º TEN"),
+    ASPIRANTE("ASP OF"),
+    CAD_PM("CAD PM"),
+    SUBTENENTE("SUBTEN"),
+    PRIMEIRO_SARGENTO("1º SGT"),
+    SEGUNDO_SARGENTO("2º SGT"),
+    TERCEIRO_SARGENTO("3º SGT"),
+    CABO("CB"),
+    SOLDADO("SD");
 
     private final String label;
 
@@ -27,4 +27,3 @@ public enum PostoGraduacao {
         return label;
     }
 }
-

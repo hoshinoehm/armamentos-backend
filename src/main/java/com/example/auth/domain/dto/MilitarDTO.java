@@ -2,6 +2,7 @@ package com.example.auth.domain.dto;
 
 
 import com.example.auth.domain.*;
+import com.example.auth.domain.enums.Comportamento;
 import com.example.auth.domain.enums.PostoGraduacao;
 import com.example.auth.domain.enums.Quadro;
 import com.example.auth.domain.enums.Sexo;
@@ -43,6 +44,9 @@ public class MilitarDTO {
     private String logradouro;
     private String numeroCasa;
     private String bairro;
+    private String comportamento;
+    private String comportamentoEnum;
+    private String situacaoJuridica;
 
     public static MilitarDTO fromEntity(Militar militar) {
         MilitarDTO dto = new MilitarDTO();
@@ -75,6 +79,9 @@ public class MilitarDTO {
         dto.setLogradouro(militar.getLogradouro());
         dto.setNumeroCasa(militar.getNumeroCasa());
         dto.setBairro(militar.getBairro());
+        dto.setComportamento(militar.getComportamento() != null ? militar.getComportamento().getLabel() : null);
+        dto.setComportamentoEnum(militar.getComportamento() != null ? militar.getComportamento().name() : null);
+        dto.setSituacaoJuridica(militar.getSituacaoJuridica());
 
         return dto;
     }
@@ -130,6 +137,10 @@ public class MilitarDTO {
         militar.setLogradouro(this.logradouro);
         militar.setNumeroCasa(this.numeroCasa);
         militar.setBairro(this.bairro);
+        if (this.comportamentoEnum != null && !this.comportamentoEnum.isBlank()) {
+            militar.setComportamento(Comportamento.valueOf(this.comportamentoEnum));
+        }
+        militar.setSituacaoJuridica(this.situacaoJuridica);
 
         return militar;
     }

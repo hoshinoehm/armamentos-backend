@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page { size: A4; margin: 20px 28px 20px 56px; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "DejaVu Sans", Arial, sans-serif;
+            font-size: 11pt;
+            color: #000;
+        }
+
+        .page { page-break-after: always; }
+        .page:last-child { page-break-after: avoid; }
+
+        /* ── CABEÇALHO PADRÃO ── */
+        .cab { width: 100%; border-collapse: collapse; margin-bottom: 4px; }
+        .cab td { vertical-align: middle; padding: 0; }
+        .cab .logo { width: 57px; }
+        .cab .logo-center { width: 70px; text-align: center; }
+        .cab img { display: block; }
+        .cab .texto-centro { text-align: center; font-size: 10pt; font-weight: bold; line-height: 1.45; }
+        .cab .endereco { text-align: center; font-size: 8.5pt; font-weight: normal; margin-top: 4px; }
+        hr.cab-line { border: none; border-top: 1px solid #000; margin: 4px 0 8px 0; }
+
+        /* ── TÍTULOS ── */
+        .titulo { font-size: 12pt; font-weight: bold; text-align: center; margin: 8px 0 10px 0; }
+        .titulo-esq { font-size: 12pt; font-weight: bold; text-align: left; margin-bottom: 12px; }
+        .secao { font-size: 11pt; font-weight: bold; text-align: center;
+                 border-top: 1px solid #000; border-bottom: 1px solid #000;
+                 padding: 4px 0; margin: 8px 0 6px 0; }
+
+        /* ── TABELAS GERAIS ── */
+        table { border-collapse: collapse; width: 100%; }
+        td { padding: 3px 4px; }
+
+        /* ── LINHAS ── */
+        hr.sep { border: none; border-top: 1px solid #000; margin: 8px 0; }
+
+        /* ── PARÁGRAFO JUSTIFICADO COM RECUO ── */
+        p.considerando {
+            text-align: justify;
+            font-size: 12pt;
+            margin-bottom: 10px;
+            text-indent: 2em;
+        }
+
+        /* ── ASSINATURA ── */
+        .assinatura { text-align: center; font-size: 12pt; margin-top: 50px; }
+        .assinatura .linha { border-top: 1px solid #000; width: 65%; margin: 0 auto 4px; }
+    </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     PÁGINA 1 — acaf_processo_relatorio + Requerimento p/ Cautela
+     ════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+    <div style="border:1px solid #000;">
+
+        <table style="width:100%; border-collapse:collapse;">
+            <tr>
+                <td style="width:62%; border-right:1px solid #000; vertical-align:top; padding:0;">
+
+                    <div style="text-align:center; font-size:11pt; font-weight:bold;
+                                padding:6px 4px; border-bottom:1px solid #000; line-height:1.4;">
+                        POL&#205;CIA MILITAR DO MARANH&#195;O<br/>
+                        REQUERIMENTO PARA CAUTELA DE ARMA
+                    </div>
+
+                    <div style="padding:4px 6px; border-bottom:1px solid #000; font-size:10pt;">
+                        OPM: <span th:text="${r.opm}">31&#186; BPM</span>
+                    </div>
+
+                    <div style="padding:4px 6px; border-bottom:1px solid #000; font-size:10pt; min-height:30px;">
+                        REQUERENTE:<br/>
+                        <span th:text="${r.nomeCompleto}"></span>
+                    </div>
+
+                    <table style="width:100%; border-collapse:collapse; border-bottom:1px solid #000;">
+                        <tr>
+                            <td style="width:55%; border-right:1px solid #000; padding:4px 6px;
+                                       vertical-align:top; font-size:10pt;">
+                                POSTO/GRADUA&#199;&#195;O:<br/>
+                                <span th:text="${r.postoGraduacao}"></span>
+                            </td>
+                            <td style="padding:4px 6px; vertical-align:top; font-size:10pt;">
+                                MATR&#205;CULA:
+                                <span th:text="${r.matricula}"></span><br/>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div style="padding:4px 6px; border-bottom:1px solid #000; font-size:10pt; min-height:30px;">
+                        ENDERE&#199;O:<br/>
+                        <span th:text="${r.endereco}"></span>
+                    </div>
+
+                    <div style="padding:4px 6px; font-size:10pt;">
+                        E-MAIL:<br/>
+                        <span th:text="${r.email}"></span>
+                    </div>
+                </td>
+
+                <td style="width:38%; vertical-align:top; padding:0;">
+                    <div style="text-align:center; font-weight:bold; font-size:9pt;
+                                padding:4px; border-bottom:1px solid #000;">
+                        PROTOCOLO N&#186;
+                    </div>
+                    <table style="width:100%; border-collapse:collapse;">
+                        <tr>
+                            <td style="height:120px; text-align:center; vertical-align:middle;
+                                       font-size:16pt; font-weight:bold; padding:8px;">
+                                <span th:text="${r.protocolo}"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:62%; border-right:1px solid #000; border-top:1px solid #000; padding:0;">
+                    <table style="width:100%; border-collapse:collapse;">
+                        <tr>
+                            <td style="width:32%; border-right:1px solid #000; padding:4px 6px;
+                                       vertical-align:top; font-size:10pt;">
+                                TELEFONE:<br/>
+                                <span th:text="${r.telefone}"></span>
+                            </td>
+                            <td style="width:35%; border-right:1px solid #000; padding:4px 6px;
+                                       vertical-align:top; font-size:10pt;">
+                                CPF:<br/>
+                                <span th:text="${r.cpf}"></span>
+                            </td>
+                            <td style="padding:4px 6px; vertical-align:top; font-size:10pt;">
+                                RG/UF:<br/>
+                                <span th:text="${r.rgUf}"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width:38%; border-top:1px solid #000; padding:4px 6px; vertical-align:top; font-size:10pt;">
+                    DATA DE NASCIMENTO:<br/>
+                    <span th:text="${r.dataNascimento}"></span>
+                </td>
+            </tr>
+        </table>
+
+        <div style="border-top:1px solid #000; padding:3px 6px; font-weight:bold; font-size:10pt;">
+            DESTINAT&#193;RIO:
+        </div>
+        <div style="padding:2px 6px; text-align:center; font-size:10pt; font-weight:bold; border-bottom:1px solid #000;">
+            <span th:text="${r.destinatario}"></span>
+        </div>
+
+        <div style="text-align:center; font-weight:bold; font-size:10pt; padding:4px 0;">
+            REQUER
+        </div>
+        <div style="padding:5px 8px; text-align:justify; font-size:10pt; border-bottom:1px solid #000;">
+            A concess&#227;o da cautela de 01 (uma)
+            <span th:text="${#strings.replace(r.especie, ' SEMI-AUTOMATICA', '')}"></span>
+            <span th:text="${r.marca}"></span>
+            Cal. <span th:text="${r.calibre}"></span>
+            modelo <span th:text="${r.modelo}"></span>
+            pelo prazo de <span th:text="${r.prazoCautela}">indeterminado</span>,
+            para uso pessoal e no servi&#231;o.
+        </div>
+
+        <div style="padding:3px 6px; font-weight:bold; font-size:10pt; text-align:center;">
+            MATERIAL DESEJADO
+        </div>
+        <table style="width:100%; border-collapse:collapse; border-bottom:1px solid #000;">
+            <tr>
+                <td style="width:50%; vertical-align:top; padding:5px 10px; font-size:10pt; line-height:1.8;">
+                    ESP&#201;CIE: <span th:text="${r.especie}"></span><br/>
+                    MARCA: <span th:text="${r.marca}"></span><br/>
+                    MODELO: <span th:text="${r.modelo}"></span><br/>
+                    N&#186; ARMA: <span th:text="${r.numeroArma}"></span><br/>
+                </td>
+                <td style="width:50%; vertical-align:top; padding:5px 10px; font-size:10pt; line-height:1.8;">
+                    CALIBRE: <span th:text="${r.calibre}"></span><br/>
+                    PA&#205;S DE FABRICA&#199;&#195;O: <span th:text="${r.paisFabricacao}"></span><br/>
+                    QTADE DE TIROS: <span th:text="${r.quantidadeTiros}"></span><br/>
+                    N&#205;VEL DE PROTE&#199;&#195;O: <span th:text="${r.nivelProtecao}"></span>
+                </td>
+            </tr>
+        </table>
+
+        <div style="padding:3px 6px; font-weight:bold; font-size:10pt; text-align:center;">
+            DOCUMENTOS COMPROB&#193;T&#211;RIOS
+        </div>
+        <div style="padding:4px 10px; font-size:10pt; border-bottom:1px solid #000;"
+             th:text="${r.documentosComprobatorios}">
+        </div>
+
+        <table style="width:100%; border-collapse:collapse; border-bottom:1px solid #000;">
+            <tr>
+                <td style="padding:6px 8px; font-size:10pt; font-style:italic; vertical-align:top; width:60%;">
+                    Declaro conhecer as normas vigentes que regulam a aquisi&#231;&#227;o de arma de fogo.
+                </td>
+                <td style="padding:6px 8px; font-size:10pt; vertical-align:bottom; text-align:center;">
+                    <span th:text="${r.cidade}">Gov. Nunes Freire</span> - <span th:text="${r.uf}">MA</span>,
+                    <span th:text="${r.dataRequerimento}"></span>.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center; padding:24px 8px 6px;">
+                    ________________________________________________<br/>
+                    Assinatura
+                </td>
+            </tr>
+        </table>
+
+        <div style="padding:3px 6px; font-weight:bold; font-size:10pt; text-align:center;">
+            INFORMA&#199;&#213;ES
+        </div>
+        <table style="width:100%; border-collapse:collapse;">
+            <tr>
+                <td style="padding:3px 6px; font-size:10pt;">
+                    Data de Inclus&#227;o: <span th:text="${r.dataInclusao}"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:3px 6px; font-size:10pt;">
+                    Comportamento: <span th:text="${r.comportamento}"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:3px 6px; font-size:10pt;">
+                    Situa&#231;&#227;o Jur&#237;dica: <span th:text="${r.situacaoJuridica}"></span>
+                </td>
+            </tr>
+        </table>
+
+        <div style="padding:4px 8px; font-size:8.5pt; line-height:1.55; border-top:1px solid #000;">
+            I &#8211; Ter comportamento "Excepcional" ou "&#211;timo" nos &#250;ltimos 12 meses;<br/>
+            II &#8211; Estar em regular exerc&#237;cio;<br/>
+            III &#8211; N&#227;o ter sido preso em flagrante nos &#250;ltimos 12 (doze) meses;<br/>
+            IV &#8211; N&#227;o possuir cometimento de crime doloso nos &#250;ltimos 12 (doze) meses;<br/>
+            V &#8211; N&#227;o estar com ficha de infra&#231;&#227;o referente ao porte de arma de fogo;<br/>
+            VI &#8211; N&#227;o ter sido enquadrado em transgress&#227;o disciplinar de natureza grave nos &#250;ltimos 12 meses;<br/>
+            VII &#8211; N&#227;o ter sido beneficiado com cautela de arma de fogo nos &#250;ltimos 6 (seis) meses.
+        </div>
+
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PÁGINA 2 — amparo_legal: Amparo Legal + Despachos + Decisão
+     ════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+<div style="border:1px solid #000;">
+
+    <div style="font-weight:bold; font-size:10pt; text-align:center; padding:4px 6px; border-bottom:1px solid #000;">
+        AMPARO LEGAL
+    </div>
+    <div style="padding:8px; font-size:10pt; min-height:44px;">
+        O requerente preenche os requisitos da Portaria n&#186; 051/2013 do GCG, de 11 de novembro de 2013.
+    </div>
+    <table style="width:100%; border-collapse:collapse; border-bottom:1px solid #000;">
+        <tr>
+            <td style="width:42%; font-size:10pt; padding:6px 8px; vertical-align:bottom;">
+                <span th:text="${r.cidade}"></span> -<span th:text="${r.uf}"></span>,
+                <span th:text="${r.dataRequerimento}"></span>
+            </td>
+            <td style="font-size:10pt; text-align:center; vertical-align:bottom; padding:6px 8px;">
+                ___________________________________________________<br/>
+                <span th:text="${r.postoChefeP4}"></span> <span th:text="${r.nomeChefeP4}"></span><br/>
+                <span th:text="${r.funcaoChefeP4}"></span>
+            </td>
+        </tr>
+    </table>
+
+    <div style="font-weight:bold; font-size:10pt; text-align:center; padding:4px 6px; border-bottom:1px solid #000;">
+        DESPACHOS INTERMEDI&#193;RIOS
+    </div>
+    <table style="width:100%; border-collapse:collapse; border-bottom:1px solid #000;">
+        <tr>
+            <td style="width:50%; border-right:1px solid #000; vertical-align:top; padding:8px; font-size:10pt;">
+                <div style="text-decoration:underline; text-align:center; margin-bottom:8px;">Cmt da OPM</div>
+                <div style="line-height:2;">
+                    <span th:text="${#strings.contains(r.despachoComandanteOpm, 'Defiro') and !#strings.contains(r.despachoComandanteOpm, 'Indefiro') ? '( x )' : '(    )'}"></span>&#160;&#160;Defiro<br/>
+                    <span th:text="${#strings.contains(r.despachoComandanteOpm, 'Indefiro') ? '( x )' : '(    )'}"></span>&#160;&#160;Indefiro<br/>
+                    <span th:text="${#strings.contains(r.despachoComandanteOpm, 'Encaminhe') ? '( x )' : '(    )'}"></span>&#160;&#160;Encaminhe-se ao Cmt do CPA I-8.
+                </div>
+                <div style="margin-top:20px;">
+                    Quartel em <span th:text="${r.cidade}"></span>-<span th:text="${r.uf}"></span>,
+                    <span th:text="${r.dataRequerimento}"></span>.
+                </div>
+                <div style="text-align:center; margin-top:30px;">
+                    ________________________________<br/>
+                    <span th:text="${r.postoComandanteOpm}"></span> <span th:text="${r.nomeComandanteOpm}"></span><br/>
+                    <span th:text="${r.funcaoComandanteOpm}"></span>
+                </div>
+            </td>
+            <td style="width:50%; vertical-align:top; padding:8px; font-size:10pt;">
+                <div style="text-decoration:underline; text-align:center; margin-bottom:8px;">Cmt do CPA I-8</div>
+                <div style="line-height:2;">
+                    (    )&#160;De acordo.<br/>
+                    (    )&#160;Defiro<br/>
+                    (    )&#160;Indefiro<br/>
+                    (    )&#160;Encaminhe-se ao Exm&#186; Sr.&#160;Cmt. Geral para decis&#227;o
+                </div>
+                <div style="margin-top:20px;">
+                    Quartel em Santa In&#234;s-MA, _____/____/_____.
+                </div>
+                <div style="text-align:center; margin-top:30px;">
+                    ________________________________<br/>
+                    <em>Assinatura</em>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div style="font-weight:bold; font-size:10pt; text-align:center; padding:4px 6px; border-bottom:1px solid #000;">
+        DECIS&#195;O
+    </div>
+
+    <div style="font-weight:bold; font-size:10pt; text-align:center; padding:4px 6px; border-bottom:1px solid #000;">
+        OUTRAS PROVID&#202;NCIAS EFETUADAS
+    </div>
+    <div style="height:160px;"></div>
+    <table style="width:100%; border-collapse:collapse; padding:6px 8px;">
+        <tr>
+            <td style="font-size:10pt; padding:6px 8px;">
+                Quartel em <span th:text="${r.cidade}"></span>, <span th:text="${r.dataRequerimento}"></span>
+            </td>
+            <td style="font-size:10pt; text-align:right; padding:6px 8px;">
+                ____________________________<br/>
+                <em>Assinatura do Oficial Respons&#225;vel</em>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PÁGINA 3 — requerimento_cautela_externa: Concessão (CPAI/8)
+     ════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+        <table style="width:100%; border-collapse:collapse; margin-bottom:4px;">
+        <tr>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/logo_pmma.png" alt="PMMA" style="width:50px; height:50px;"/>
+            </td>
+            <td style="vertical-align:middle; padding:0; text-align:center;">
+                <img src="img/logo_institucional.png" alt="31 BPM"
+                     style="width:60px; height:60px; display:block; margin:0 auto 4px auto;"/>
+                <div style="font-size:10pt; font-weight:bold; line-height:1.45;">
+                    ESTADO DO MARANH&#195;O<br/>
+                    SECRETARIA DE ESTADO DA SEGURAN&#199;A P&#218;BLICA<br/>
+                    POL&#205;CIA MILITAR DO MARANH&#195;O<br/>
+                    COMANDO DE POLICIAMENTO DE &#193;REA DO INTERIOR 8<br/>
+                    31&#186; BATALH&#195;O DE POL&#205;CIA MILITAR<br/>
+                    P/4
+                </div>
+                <div style="font-size:8.5pt; font-weight:normal; margin-top:4px; text-align:center;">
+                    Rua Primeiro de Maio s/n&#186;, Centro, Governador Nunes Freire &#8211; MA, CEP: 65.284-000 CNPJ: 28.313.148/0001-03
+                </div>
+            </td>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/brasao_ma.png" alt="MA"
+                     style="width:50px; height:50px; display:block; margin-left:auto;"/>
+            </td>
+        </tr>
+    </table>
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+    <div class="titulo-esq">
+        REQUERIMENTO PARA CONCESS&#195;O DE CAUTELA DE ARMA DE FOGO PARA O USO FORA DO HOR&#193;RIO DE TURNO/JORNADA DE TRABALHO
+    </div>
+
+    <p class="considerando" style="text-indent:0;">
+        Sr. Cel QOEM Comandante de Policiamento de &#193;rea do Interior 8 (CPAI-8),
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO que este signat&#225;rio reside em <strong th:text="${r.cidadeResidencia}"></strong> e trabalha na cidade de <strong th:text="${r.cidadeTrabalho}"></strong>, sendo necess&#225;rio o deslocamento de sua resid&#234;ncia para executar suas fun&#231;&#245;es de Policial Militar, sendo acionado tamb&#233;m para dar apoio em ocorr&#234;ncias durante a folga,
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO que a Portaria n&#186; 002/2006-GCG (Disp&#245;e sobre a aquisi&#231;&#227;o, registro, concess&#227;o, suspens&#227;o, cassa&#231;&#227;o, revalida&#231;&#227;o do porte, cadastro e tr&#226;nsito de armas de fogo de uso permitido e de uso restrito, por policiais militares da PMMA e d&#225; outras provid&#234;ncias), publicado no BG n&#186; 022, de 31/01/2006, a Portaria n&#186; 024/2010-GCG (Disp&#245;e sobre a confer&#234;ncia do armamento das UPMS e d&#225; outras provid&#234;ncias), publicada no BG n&#186; 094, de 21/05/2010, e a Portaria n&#186; 051/2013-GCG (Disp&#245;e sobre a distribui&#231;&#227;o e a descarga de material b&#233;lico e d&#225; outras provid&#234;ncias), publicada no BG n&#186; 217, de 12/11/2013, preveem a concess&#227;o de cautela de arma de fogo para os policiais militares utilizarem fora do hor&#225;rio de trabalho, desde que a necessidade seja devidamente justificada e que haja o parecer favor&#225;vel do Comandante Imediato, o concordo do Comandante da UPM e a autoriza&#231;&#227;o do Comandante de Policiamento de &#193;rea do Interior 8 (CPAI-8),
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO, que estou plenamente ciente do que disp&#245;e a Portaria n&#186; 002/2006-GCG (Disp&#245;e sobre a aquisi&#231;&#227;o, registro, concess&#227;o, suspens&#227;o, cassa&#231;&#227;o, revalida&#231;&#227;o do porte, cadastro e tr&#226;nsito de armas de fogo de uso permitido e de uso restrito, por policiais militares da PMMA e d&#225; outras provid&#234;ncias), publicado no BG n&#186; 022, de 31/01/2006, a Portaria n&#186; 024/2010-GCG (Disp&#245;e sobre a confer&#234;ncia do armamento das UPMS e d&#225; outras provid&#234;ncias), publicada no BG n&#186; 094, de 21/05/2010, e a Portaria n&#186; 051/2013-GCG (Disp&#245;e sobre a distribui&#231;&#227;o e a descarga de material b&#233;lico e d&#225; outras provid&#234;ncias), publicada no BG n&#186; 217, de 12/11/2013, no tocante aos meus direitos, obriga&#231;&#245;es e penalidades,
+    </p>
+
+    <p class="considerando">
+        Solicito, pelo exposto acima, a concess&#227;o da cautela de um (a)
+        <strong th:text="${r.modelo}"></strong>
+        <strong th:text="${r.marca}"></strong>
+        <strong th:text="${r.calibre}"></strong>
+        <strong th:text="${r.numeroArma}"></strong>,
+        para uso pessoal deste requerente, nos termos dos dispositivos legais vigentes.
+    </p>
+
+    <p style="text-align:center; font-size:12pt; margin-top:20px;">
+        Quartel do <strong th:text="${r.opm}"></strong>,
+        em Gov. Nunes Freire - MA,
+        <strong th:text="${r.dataRequerimento}"></strong>.
+    </p>
+
+    <div class="assinatura">
+        <div class="linha"></div>
+        <strong th:text="${r.postoGraduacao}"></strong>
+        <strong th:text="${r.nomeCompleto}"></strong>
+    </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PÁGINA 4 — concordo_comandante: Concordo do Cmt da UPM
+     ════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+        <table style="width:100%; border-collapse:collapse; margin-bottom:4px;">
+        <tr>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/logo_pmma.png" alt="PMMA" style="width:50px; height:50px;"/>
+            </td>
+            <td style="vertical-align:middle; padding:0; text-align:center;">
+                <img src="img/logo_institucional.png" alt="31 BPM"
+                     style="width:60px; height:60px; display:block; margin:0 auto 4px auto;"/>
+                <div style="font-size:10pt; font-weight:bold; line-height:1.45;">
+                    ESTADO DO MARANH&#195;O<br/>
+                    SECRETARIA DE ESTADO DA SEGURAN&#199;A P&#218;BLICA<br/>
+                    POL&#205;CIA MILITAR DO MARANH&#195;O<br/>
+                    COMANDO DE POLICIAMENTO DE &#193;REA DO INTERIOR 8<br/>
+                    31&#186; BATALH&#195;O DE POL&#205;CIA MILITAR<br/>
+                    P/4
+                </div>
+                <div style="font-size:8.5pt; font-weight:normal; margin-top:4px; text-align:center;">
+                    Rua Primeiro de Maio s/n&#186;, Centro, Governador Nunes Freire &#8211; MA, CEP: 65.284-000 CNPJ: 28.313.148/0001-03
+                </div>
+            </td>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/brasao_ma.png" alt="MA"
+                     style="width:50px; height:50px; display:block; margin-left:auto;"/>
+            </td>
+        </tr>
+    </table>
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+    <div style="font-size:12pt; font-weight:normal; text-align:left; margin-bottom:12px;">
+        CONCORDO DO COMANDANTE DA UPM REFERENTE AO REQUERIMENTO DO
+        <strong th:text="${r.identificacaoCompleta}"></strong>
+        PARA A CONCESS&#195;O DE CAUTELA DE ARMA DE FOGO PARA USO FORA DO HOR&#193;RIO DE TURNO/JORNADA DE TRABALHO.
+    </div>
+
+    <p class="considerando">
+        CONSIDERANDO os termos favor&#225;veis do parecer do comandante imediato ao
+        <strong th:text="${r.identificacaoCompleta}"></strong>
+        referente &#224; concess&#227;o ao requerente da cautela de um (a)
+        <strong th:text="${r.modelo}"></strong>
+        <strong th:text="${r.marca}"></strong>
+        <strong th:text="${r.calibre}"></strong>
+        <strong th:text="${r.numeroArma}"></strong>;
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO que o requerente &#233; conhecedor do que disp&#245;e a Portaria n&#186; 002/2006-GCG (Disp&#245;e sobre a aquisi&#231;&#227;o, registro, concess&#227;o, suspens&#227;o, cassa&#231;&#227;o, revalida&#231;&#227;o do porte, cadastro e tr&#226;nsito de armas de fogo de uso permitido e de uso restrito, por policiais militares da PMMA e d&#225; outras provid&#234;ncias), publicado no BG n&#186; 022, de 31/01/2006, a Portaria n&#186; 024/2010-GCG (Disp&#245;e sobre a confer&#234;ncia do armamento das UPMS e d&#225; outras provid&#234;ncias), publicada no BG n&#186; 094, de 21/05/2010, e a Portaria n&#186; 051/2013-GCG (Disp&#245;e sobre a distribui&#231;&#227;o e a descarga de material b&#233;lico e d&#225; outras provid&#234;ncias), publicada no BG n&#186; 217, de 12/11/2013, no tocante aos seus direitos, obriga&#231;&#245;es e penalidades,
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO, que o requerente preencheu os requisitos da Portaria n&#186; 002/2006-GCG, publicado no BG n&#186; 022, de 31/01/2006, a Portaria n&#186; 024/2010-GCG, publicada no BG n&#186; 094, de 21/05/2010, e a Portaria n&#186; 051/2013-GCG, publicada no BG n&#186; 217, de 12/11/2013, para concess&#227;o de cautela de um (a)
+        <strong th:text="${r.modelo}"></strong>
+        <strong th:text="${r.marca}"></strong>
+        <strong th:text="${r.calibre}"></strong>
+        <strong th:text="${r.numeroArma}"></strong>
+        para uso fora do hor&#225;rio de turno/jornada de trabalho,
+    </p>
+
+    <p class="considerando">
+        CONCORDO com o parecer e acato as alega&#231;&#245;es do requerente, os documentos comprobat&#243;rios juntados, e a aus&#234;ncia de registro de envolvimento do requerente em situa&#231;&#245;es que inviabilizariam o atendimento de seu pedido,
+    </p>
+
+    <p class="considerando">
+        Fa&#231;o remessa ao Sr. Cel. QOEM Comandante de Policiamento de &#193;rea do Interior 8 (CPAI-8), a quem compete a decis&#227;o final.
+    </p>
+
+    <p style="text-align:center; font-size:12pt; margin-top:20px;">
+        Quartel do <strong th:text="${r.opm}"></strong>,
+        em Gov. Nunes Freire - MA,
+        <strong th:text="${r.dataRequerimento}"></strong>.
+    </p>
+
+    <div class="assinatura">
+        <div class="linha"></div>
+        <strong th:text="${r.postoComandanteOpm}"></strong>
+        <strong th:text="${r.nomeComandanteOpm}"></strong><br/>
+        <strong th:text="${r.funcaoComandanteOpm}"></strong>
+    </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PÁGINA 5 — parecer_comandante_upm: Parecer do Cmt Imediato
+     ════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+        <table style="width:100%; border-collapse:collapse; margin-bottom:4px;">
+        <tr>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/logo_pmma.png" alt="PMMA" style="width:50px; height:50px;"/>
+            </td>
+            <td style="vertical-align:middle; padding:0; text-align:center;">
+                <img src="img/logo_institucional.png" alt="31 BPM"
+                     style="width:60px; height:60px; display:block; margin:0 auto 4px auto;"/>
+                <div style="font-size:10pt; font-weight:bold; line-height:1.45;">
+                    ESTADO DO MARANH&#195;O<br/>
+                    SECRETARIA DE ESTADO DA SEGURAN&#199;A P&#218;BLICA<br/>
+                    POL&#205;CIA MILITAR DO MARANH&#195;O<br/>
+                    COMANDO DE POLICIAMENTO DE &#193;REA DO INTERIOR 8<br/>
+                    31&#186; BATALH&#195;O DE POL&#205;CIA MILITAR<br/>
+                    P/4
+                </div>
+                <div style="font-size:8.5pt; font-weight:normal; margin-top:4px; text-align:center;">
+                    Rua Primeiro de Maio s/n&#186;, Centro, Governador Nunes Freire &#8211; MA, CEP: 65.284-000 CNPJ: 28.313.148/0001-03
+                </div>
+            </td>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/brasao_ma.png" alt="MA"
+                     style="width:50px; height:50px; display:block; margin-left:auto;"/>
+            </td>
+        </tr>
+    </table>
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+    <div style="font-size:12pt; font-weight:normal; text-align:left; margin-bottom:12px;">
+        PARECER DO COMANDANTE IMEDIATO REFERENTE AO REQUERIMENTO DO
+        <strong th:text="${r.identificacaoCompleta}"></strong>
+        DE CAUTELA DE ARMA DE FOGO PARA USO FORA DO HOR&#193;RIO DE TURNO/JORNADA DE TRABALHO.
+    </div>
+
+    <p class="considerando">
+        CONSIDERANDO que o requerente exp&#244;s motivos que justificam a concess&#227;o de cautela de um (a)
+        <strong th:text="${r.modelo}"></strong>
+        <strong th:text="${r.marca}"></strong>
+        <strong th:text="${r.calibre}"></strong>
+        <strong th:text="${r.numeroArma}"></strong>,
+        para uso fora do hor&#225;rio de turno/jornada de trabalho,
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO que o requerente juntou os documentos comprobat&#243;rios das alega&#231;&#245;es feitas,
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO que n&#227;o h&#225; registro de envolvimento do requerente em situa&#231;&#245;es que inviabilizariam o atendimento do seu pedido,
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO que o requerente &#233; conhecedor do que disp&#245;e a Portaria n&#186; 002/2006-GCG (Disp&#245;e sobre a aquisi&#231;&#227;o, registro, concess&#227;o, suspens&#227;o, cassa&#231;&#227;o, revalida&#231;&#227;o do porte, cadastro e tr&#226;nsito de armas de fogo de uso permitido e de uso restrito, por policiais militares da PMMA e d&#225; outras provid&#234;ncias), publicado no BG n&#186; 022, de 31/01/2006, a Portaria n&#186; 024/2010-GCG (Disp&#245;e sobre a confer&#234;ncia do armamento das UPMS e d&#225; outras provid&#234;ncias), publicada no BG n&#186; 094, de 21/05/2010, e a Portaria n&#186; 051/2013-GCG (Disp&#245;e sobre a distribui&#231;&#227;o e a descarga de material b&#233;lico e d&#225; outras provid&#234;ncias), publicada no BG n&#186; 217, de 12/11/2013, no tocante aos seus direitos, obriga&#231;&#245;es e penalidades,
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO, que o requerente preencheu os requisitos da Portaria n&#186; 002/2006-GCG, publicado no BG n&#186; 022, de 31/01/2006, a Portaria n&#186; 024/2010-GCG, publicada no BG n&#186; 094, de 21/05/2010, e a Portaria n&#186; 051/2013-GCG, publicada no BG n&#186; 217, de 12/11/2013, para concess&#227;o de cautela de um (a)
+        <strong th:text="${r.modelo}"></strong>
+        <strong th:text="${r.marca}"></strong>
+        <strong th:text="${r.calibre}"></strong>
+        <strong th:text="${r.numeroArma}"></strong>,
+        para uso fora do hor&#225;rio de turno/jornada de trabalho,
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO, finalmente, que o requerente demonstrou at&#233; esta data compet&#234;ncia, compromisso e responsabilidade no cumprimento de suas obriga&#231;&#245;es junto ao seu local de trabalho,
+    </p>
+
+    <p class="considerando">
+        Sou de parecer que seja concedida a cautela de um (a)
+        <strong th:text="${r.modelo}"></strong>
+        <strong th:text="${r.marca}"></strong>
+        <strong th:text="${r.calibre}"></strong>
+        <strong th:text="${r.numeroArma}"></strong>,
+        para o <strong th:text="${r.identificacaoCompleta}"></strong>.
+    </p>
+
+    <p class="considerando">
+        Ao comandante do <strong th:text="${r.opm}"></strong> para manifesta&#231;&#227;o e remessa ao comandante de Policiamento de &#193;rea do interior 8 (CPAI-8), a quem compete a decis&#227;o final.
+    </p>
+
+    <p style="text-align:center; font-size:12pt; margin-top:20px;">
+        Quartel do <strong th:text="${r.opm}"></strong>,
+        em Gov. Nunes Freire - MA,
+        <strong th:text="${r.dataRequerimento}"></strong>.
+    </p>
+
+    <div class="assinatura">
+        <div class="linha"></div>
+        <strong th:text="${r.postoChefeP4}"></strong>
+        <strong th:text="${r.nomeChefeP4}"></strong><br/>
+        <strong th:text="${r.funcaoChefeP4}"></strong>
+    </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PÁGINA 6 — cautela_armamento: Cautela de Armamento (parte 1)
+     ════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+    <table style="width:100%; border-collapse:collapse; margin-bottom:4px;">
+        <tr>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/logo_pmma.png" alt="PMMA" style="width:50px; height:50px;"/>
+            </td>
+            <td style="vertical-align:middle; padding:0; text-align:center;">
+                <img src="img/logo_institucional.png" alt="31 BPM"
+                     style="width:60px; height:60px; display:block; margin:0 auto 4px auto;"/>
+                <div style="font-size:10pt; font-weight:bold; line-height:1.45;">
+                    ESTADO DO MARANH&#195;O<br/>
+                    SECRETARIA DE ESTADO DA SEGURAN&#199;A P&#218;BLICA<br/>
+                    POL&#205;CIA MILITAR DO MARANH&#195;O<br/>
+                    COMANDO DE POLICIAMENTO DE &#193;REA DO INTERIOR 8<br/>
+                    31&#186; BATALH&#195;O DE POL&#205;CIA MILITAR<br/>
+                    P/4
+                </div>
+                <div style="font-size:8.5pt; font-weight:normal; margin-top:4px; text-align:center;">
+                    Rua Primeiro de Maio s/n&#186;, Centro, Governador Nunes Freire &#8211; MA, CEP: 65.284-000 CNPJ: 28.313.148/0001-03
+                </div>
+            </td>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/brasao_ma.png" alt="MA"
+                     style="width:50px; height:50px; display:block; margin-left:auto;"/>
+            </td>
+        </tr>
+    </table>
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+    <!-- AUTORIZO (esquerda) -->
+    <table style="width:100%; border-collapse:collapse; margin-bottom:8px;">
+        <tr>
+            <td style="width:40%; border:1px solid #000; padding:6px 8px; text-align:center; font-size:10pt;">
+                <strong>AUTORIZO</strong><br/>
+                EM _____ / _____ / _____<br/><br/>
+                ___________________________________<br/>
+                CMT CPAI-8
+            </td>
+            <td style="width:60%;"></td>
+        </tr>
+    </table>
+
+    <!-- Título -->
+    <div style="text-align:center; font-size:13pt; font-weight:bold; margin-bottom:10px;">
+        CAUTELA DE ARMAMENTO N&#186; <span th:text="${r.protocolo}"></span>
+    </div>
+
+    <!-- DADOS DO PORTADOR -->
+    <div style="font-weight:bold; font-size:10pt; background:#ddd; border:1px solid #000;
+                border-bottom:none; padding:3px 6px; text-align:center;">
+        DADOS DO PORTADOR
+    </div>
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:8px;">
+        <tr>
+            <td style="width:30%; border-right:1px solid #000; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">POSTO/GRADUA&#199;&#195;O</td>
+            <td style="width:45%; border-right:1px solid #000; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">NOME COMPLETO</td>
+            <td style="width:13%; border-right:1px solid #000; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">MATR&#205;CULA</td>
+            <td style="width:12%; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">RG</td>
+        </tr>
+        <tr>
+            <td style="border-right:1px solid #000; padding:5px 6px; font-size:10pt;"
+                th:text="${r.postoGraduacao}"></td>
+            <td style="border-right:1px solid #000; padding:5px 6px; font-size:10pt;"
+                th:text="${r.nomeCompleto}"></td>
+            <td style="border-right:1px solid #000; padding:5px 6px; font-size:10pt;"
+                th:text="${r.matricula}"></td>
+            <td style="padding:5px 6px; font-size:10pt;"
+                th:text="${r.rgUf}"></td>
+        </tr>
+    </table>
+
+    <!-- DADOS DA ARMA -->
+    <div style="font-weight:bold; font-size:10pt; background:#ddd; border:1px solid #000;
+                border-bottom:none; padding:3px 6px; text-align:center;">
+        DADOS DA ARMA
+    </div>
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:8px;">
+        <tr>
+            <td style="width:17%; border-right:1px solid #000; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">TIPO</td>
+            <td style="width:15%; border-right:1px solid #000; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">MARCA</td>
+            <td style="width:15%; border-right:1px solid #000; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">MODELO</td>
+            <td style="width:13%; border-right:1px solid #000; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">CALIBRE</td>
+            <td style="width:20%; border-right:1px solid #000; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">N&#186; DA ARMA</td>
+            <td style="width:20%; border-bottom:1px solid #000;
+                       padding:4px 6px; font-size:9pt; font-weight:bold;">N&#186; DO TOMBAMENTO</td>
+        </tr>
+        <tr>
+            <td style="border-right:1px solid #000; padding:5px 6px; font-size:10pt;"
+                th:text="${r.especie}"></td>
+            <td style="border-right:1px solid #000; padding:5px 6px; font-size:10pt;"
+                th:text="${r.marca}"></td>
+            <td style="border-right:1px solid #000; padding:5px 6px; font-size:10pt;"
+                th:text="${r.modelo}"></td>
+            <td style="border-right:1px solid #000; padding:5px 6px; font-size:10pt;"
+                th:text="${r.calibre}"></td>
+            <td style="border-right:1px solid #000; padding:5px 6px; font-size:10pt;"
+                th:text="${r.numeroArma}"></td>
+            <td style="padding:5px 6px; font-size:10pt;"
+                th:text="${r.tombo}"></td>
+        </tr>
+    </table>
+
+    <!-- EQUIPAMENTOS E ACESSÓRIOS — estende até o rodapé -->
+    <div style="font-weight:bold; font-size:10pt; background:#ddd; border:1px solid #000;
+                border-bottom:none; padding:3px 6px; text-align:center;">
+        EQUIPAMENTOS E ACESS&#211;RIOS ENTREGUES COM A ARMA
+    </div>
+    <table style="width:100%; border-collapse:collapse; border:1px solid #000; height:380px;">
+        <tr>
+            <td style="width:70%; border-right:1px solid #000; padding:12px 10px;
+                       font-size:10pt; line-height:2; vertical-align:top;">
+                Carregador: <span th:text="${r.quantidadeCarregadores}">0</span>;<br/>
+                Muni&#231;&#245;es: <span th:text="${r.quantidadeMunicao}">0</span>.
+            </td>
+            <td style="width:30%; text-align:center; padding:12px 8px;
+                       font-size:10pt; vertical-align:top;">
+                _______________________<br/>
+                RUBRICAS
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PÁGINA 7 — cautela_armamento: Cautela de Armamento (parte 2)
+     ════════════════════════════════════════════════════════════ -->
+<div>
+
+    
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+    <!-- Quadro único — tudo dentro de uma só borda -->
+    <div style="border:1px solid #000; padding:16px 20px; min-height:650px;">
+
+        <!-- OBSERVAÇÕES SOBRE A ARMA -->
+        <div style="text-align:center; font-weight:bold; font-size:11pt; margin-bottom:16px;">
+            OBSERVA&#199;&#213;ES SOBRE A ARMA
+        </div>
+
+        <ol style="font-size:10pt; line-height:1.9; margin:0 0 30px 20px; text-align:justify;">
+            <li>Recebi a arma, carregador e muni&#231;&#227;o descritos nesta cautela em perfeito estado;</li>
+            <li>Serei o &#250;nico respons&#225;vel pela arma, carregador e muni&#231;&#227;o descritos nesta cautela;</li>
+            <li>Estou ciente das responsabilidades administrativas e penais em caso de n&#227;o devolu&#231;&#227;o ou extravio da arma, carregador e muni&#231;&#227;o descritos nesta cautela;</li>
+        </ol>
+
+        <!-- POSTO COM ASSINATURA DOS RESPONSÁVEIS -->
+        <div style="font-size:11pt; font-weight:bold; margin-bottom:40px;">
+            POSTO COM ASSINATURA LEG&#205;VEL DOS RESPONS&#193;VEIS PELO ARMAMENTO
+        </div>
+
+        <div style="text-align:center; font-size:10pt; margin-bottom:40px;">
+            _______________________________________________<br/>
+            <span th:text="${r.postoComandanteOpm}"></span>
+            <span th:text="${r.nomeComandanteOpm}"></span><br/>
+            Comandante da Unidade/Subdiretor
+        </div>
+
+        <div style="text-align:center; font-size:10pt; margin-bottom:50px;">
+            _______________________________________________<br/>
+            <span th:text="${r.postoChefeP4}"></span>
+            <span th:text="${r.nomeChefeP4}"></span><br/>
+            Fiscal Administrativo da Unidade ou Correspondente
+        </div>
+
+        <!-- RECEBIDA / DEVOLVIDA -->
+        <div style="font-size:10pt; line-height:2.6;">
+            RECEBIDA EM:_____/_____/_____<br/>
+            ASSINATURA DO PORTADOR___________________________<br/>
+            DEVOLVIDA EM: _____/_____/_____<br/>
+            ASSINATURA DO PORTADOR___________________________
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

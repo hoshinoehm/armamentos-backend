@@ -55,6 +55,8 @@ public class MilitarService {
         militarExistente.setLogradouro(militarAtualizado.getLogradouro());
         militarExistente.setNumeroCasa(militarAtualizado.getNumeroCasa());
         militarExistente.setBairro(militarAtualizado.getBairro());
+        militarExistente.setComportamento(militarAtualizado.getComportamento());
+        militarExistente.setSituacaoJuridica(militarAtualizado.getSituacaoJuridica());
 
         return militarRepository.save(militarExistente);
     }

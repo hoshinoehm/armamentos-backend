@@ -36,6 +36,11 @@ public class ControleArmamentoProcessoVisualizacaoDTO {
     private String tombo;
     private Integer quantidadeCarregadores;
 
+    // Militar (campos adicionais)
+    private String dataInclusao;
+    private String comportamento;
+    private String situacaoJuridica;
+
     // Controle
     private Integer quantidadeMunicao;
     private String dataEntrega;

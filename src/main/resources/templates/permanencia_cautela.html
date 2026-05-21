@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page { size: A4; margin: 20px 28px 20px 56px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "DejaVu Sans", Arial, sans-serif; font-size: 11pt; color: #000; }
+        .cab { width: 100%; border-collapse: collapse; margin-bottom: 4px; }
+        .cab td { vertical-align: middle; padding: 0; }
+        .cab .logo { width: 57px; }
+        .cab .logo-center { width: 70px; text-align: center; }
+        .cab img { display: block; }
+        .cab .texto-centro { text-align: center; font-size: 10pt; font-weight: bold; line-height: 1.45; }
+        .cab .endereco { text-align: center; font-size: 8.5pt; font-weight: normal; margin-top: 4px; }
+        hr.cab-line { border: none; border-top: 1px solid #000; margin: 4px 0 8px 0; }
+        .titulo-esq { font-size: 12pt; font-weight: bold; text-align: left; margin-bottom: 14px; }
+        p.considerando { text-align: justify; font-size: 11pt; margin-bottom: 10px; text-indent: 2em; }
+        .assinatura { text-align: center; font-size: 11pt; margin-top: 40px; }
+        .assinatura .linha { border-top: 1px solid #000; width: 65%; margin: 0 auto 4px; }
+        .boxes { display: table; width: 100%; margin-top: 30px; }
+        .box-cell { display: table-cell; width: 33%; text-align: center; padding: 6px; border: 1px solid #000; }
+    </style>
+</head>
+<body>
+
+        <table style="width:100%; border-collapse:collapse; margin-bottom:4px;">
+        <tr>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/logo_pmma.png" alt="PMMA" style="width:50px; height:50px;"/>
+            </td>
+            <td style="vertical-align:middle; padding:0; text-align:center;">
+                <img src="img/logo_institucional.png" alt="31 BPM"
+                     style="width:60px; height:60px; display:block; margin:0 auto 4px auto;"/>
+                <div style="font-size:10pt; font-weight:bold; line-height:1.45;">
+                    ESTADO DO MARANH&#195;O<br/>
+                    SECRETARIA DE ESTADO DA SEGURAN&#199;A P&#218;BLICA<br/>
+                    POL&#205;CIA MILITAR DO MARANH&#195;O<br/>
+                    COMANDO DO POLICIAMENTO DO INTERIOR - CPAI/8<br/>
+                    31&#186; BATALH&#195;O DE POL&#205;CIA MILITAR<br/>
+                    P/4
+                </div>
+                <div style="font-size:8.5pt; font-weight:normal; margin-top:4px; text-align:center;">
+                    Rua 7 de Setembro, S/N &#8211; Centro, CEP: 65.284-000 &#8211; Governador Nunes Freire &#8211; MA
+                </div>
+            </td>
+            <td style="width:60px; vertical-align:top; padding:0;">
+                <img src="img/brasao_ma.png" alt="MA"
+                     style="width:50px; height:50px; display:block; margin-left:auto;"/>
+            </td>
+        </tr>
+    </table>
+    <hr style="border:none; border-top:1px solid #000; margin:4px 0 8px 0;"/>
+
+    <div class="titulo-esq">
+        REQUERIMENTO PARA PERMAN&#202;NCIA DE CAUTELA DE ARMAMENTO EM CASO DE AFASTAMENTO SUPERIOR A 08 (OITO) DIAS DA ATIVIDADE POLICIAL
+    </div>
+
+    <p class="considerando">
+        CONSIDERANDO os &#237;ndices de viol&#234;ncia que assolam nosso Estado;
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO que a profiss&#227;o policial militar nos coloca em potencial situa&#231;&#227;o de perigo, passando por um risco maior que o cidad&#227;o comum;
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO a atividade desempenhada como Pra&#231;a do 31&#186; BPM na regi&#227;o do Alto Turi e Gurupi, que nos coloca diuturnamente em risco, em virtude de sermos acionados a qualquer tempo para solucionar situa&#231;&#245;es conflituosas de diversas naturezas e que ainda minha moradia ser em
+        <strong th:text="${r.cidadeResidencia}"></strong> - <strong th:text="${r.uf}"></strong>, e em algumas situa&#231;&#245;es tenho que chegar ou sair cedo ou tarde em virtude do servi&#231;o;
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO o que consta no par&#225;grafo 10&#186;, do Art. 2&#186;, da Portaria n&#186; 024-GCG, que permite, excepcionalmente, o militar com cautela de armamento permanecer com a mesma em caso de afastamentos superiores a 08 (oito) dias, devidamente autorizado pelo Comandante de Policiamento de &#193;rea;
+    </p>
+
+    <p class="considerando">
+        CONSIDERANDO que estou plenamente ciente do que disp&#245;em as portarias n&#186; 002/2006-GCG e 001/2010-CPM, no tocante aos meus direitos, obriga&#231;&#245;es e penalidades;
+    </p>
+
+    <p class="considerando">
+        Diante do acima exposto, solicito a Vossa Senhoria a concess&#227;o da perman&#234;ncia de cautela (CAUTELA DE ARMA DE FOGO N&#186;
+        <strong th:text="${r.cautelaId}"></strong> /
+        <strong th:text="${r.anoEntrega}"></strong>
+        &#8211; 31&#186; BPM) que a este requerente foi designado de uma
+        <strong th:text="${r.especie}"></strong>
+        <strong th:text="${r.marca}"></strong>
+        <strong th:text="${r.modelo}"></strong>
+        calibre <strong th:text="${r.calibre}"></strong>,
+        n&#186; <strong th:text="${r.numeroArma}"></strong>
+        ACAF s/n&#186;, expedida em <strong th:text="${r.dataRequerimento}"></strong>,
+        com validade por tempo indeterminado, para uso pessoal deste requerente em casos de afastamentos da atividade policial acima de 08 (oito) dias, nos termos dos dispositivos legais vigentes.
+    </p>
+
+    <p style="text-align:center; font-size:11pt; margin-top:24px;">
+        Quartel do 31&#186; BPM, em Governador Nunes Freire - MA, <span th:text="${r.dataRequerimento}"></span>.
+    </p>
+
+    <div class="assinatura">
+        <div class="linha"></div>
+        <span th:text="${r.identificacaoCompleta}"></span><br/>
+        Requerente
+    </div>
+
+    <!-- Boxes CONCORDO / AUTORIZO / VISTO -->
+    <table style="width:100%; border-collapse:collapse; margin-top:36px;">
+        <tr>
+            <td style="width:33%; border:1px solid #000; text-align:center; padding:8px; vertical-align:top;">
+                <div style="font-weight:bold; font-size:11pt; margin-bottom:6px;">CONCORDO</div>
+                <div style="font-size:10pt;">Em: _____/____/______</div>
+                <div style="margin-top:30px; border-top:1px solid #000; padding-top:4px; font-size:10pt;">
+                    Comandante do 31&#186; BPM
+                </div>
+            </td>
+            <td style="width:34%; border:1px solid #000; text-align:center; padding:8px; vertical-align:top;">
+                <div style="font-weight:bold; font-size:11pt; margin-bottom:6px;">AUTORIZO</div>
+                <div style="font-size:10pt;">Em: _____/____/______</div>
+                <div style="margin-top:30px; border-top:1px solid #000; padding-top:4px; font-size:10pt;">
+                    Comandante do CPAI/8
+                </div>
+            </td>
+            <td style="width:33%; border:1px solid #000; text-align:center; padding:8px; vertical-align:top;">
+                <div style="font-weight:bold; font-size:11pt; margin-bottom:6px;">VISTO</div>
+                <div style="font-size:10pt;">Em: _____/____/______</div>
+                <div style="margin-top:30px; border-top:1px solid #000; padding-top:4px; font-size:10pt;">
+                    P/4 do 31&#186; BPM
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
