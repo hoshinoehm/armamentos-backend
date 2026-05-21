@@ -1,73 +1,175 @@
-# Authentication API
+# SISACAF — Backend
 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Java](https://img.shields.io/badge/Java_21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL_8-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-This project is an API built using **Java, Java Spring, Flyway Migrations, PostgresSQL as the database, and Spring Security and JWT for authentication control.**
+API REST do **Sistema de Controle de Armamento e Fardamento (SISACAF)** do **31º Batalhão de Polícia Militar do Maranhão**. Responsável pelo gerenciamento de militares, cautelas de armas e coletes, geração de relatórios PDF e controle de acesso.
 
-The API was developed for my [Youtube Tutorial](https://www.youtube.com/watch?v=5w-YCcOjPD0), to demonstrate how to configure Authenticatio and Authorization in Spring application using Spring Security.
+---
 
-## Table of Contents
+## Funcionalidades
 
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Authentication](#authentication)
-- [Database](#database)
-- [Contributing](#contributing)
+- Cadastro e gestão de **militares** (efetivo do batalhão)
+- Controle de **cautelas de armas e coletes** (saída, devolução, permanência)
+- Geração de **documentos PDF** oficiais (requerimento de cautela, concordância do comandante, parecer, etc.)
+- **Dashboard** com totais de armamento, colete e efetivo por sub-unidade
+- Autenticação e autorização com **JWT**
+- Gestão de **sub-unidades**, **funções** e localização geográfica (cidade/estado)
 
-## Installation
+---
 
-1. Clone the repository:
+## Documentos gerados
+
+| Documento | Descrição |
+|---|---|
+| Requerimento de Cautela | Solicitação formal de armamento |
+| Cautela de Arma | Registro de saída de arma individual |
+| Cautela Geral de Armas | Registro consolidado de armas por sub-unidade |
+| Permanência de Cautela | Prorrogação de cautela ativa |
+| Amparo Legal | Fundamento legal da cautela |
+| Concordância do Comandante | Aprovação do comandante da OPM |
+| Parecer do Comandante | Parecer para cautela externa |
+| Observações da Arma | Registro de condições do armamento |
+| Detalhes da Cautela | Relatório detalhado do processo |
+| Relatório ACAF | Relatório para o processo ACAF |
+
+---
+
+## Tecnologias
+
+| Camada | Tecnologia |
+|---|---|
+| Linguagem | Java 21 |
+| Framework | Spring Boot 3 |
+| Segurança | Spring Security + JWT |
+| Banco de dados | MySQL 8 |
+| ORM | Spring Data JPA / Hibernate |
+| Relatórios | JasperReports + Thymeleaf (HTML→PDF) |
+| Build | Maven |
+| Container | Docker |
+
+---
+
+## Pré-requisitos
+
+- Java 21+
+- Maven 3.9+
+- MySQL 8 (ou Docker)
+
+---
+
+## Como rodar
+
+### Com Docker (recomendado)
+
+Na raiz do repositório de infraestrutura (onde está o `docker-compose.yml`):
 
 ```bash
-git clone https://github.com/Fernanda-Kipper/auth-api.git
+docker compose up -d --build
 ```
 
-2. Install dependencies with Maven
+A API estará disponível em `http://localhost:8080`.
 
-3. Install [PostgresSQL](https://www.postgresql.org/)
+### Local (sem Docker)
 
-## Usage
+1. Crie o banco de dados MySQL:
 
-1. Start the application with Maven
-2. The API will be accessible at http://localhost:8080
-
-
-## API Endpoints
-The API provides the following endpoints:
-
-```markdown
-GET /product - Retrieve a list of all products. (all authenticated users)
-
-POST /product - Register a new product (ADMIN access required).
-
-POST /auth/login - Login into the App
-
-POST /auth/register - Register a new user into the App
+```sql
+CREATE DATABASE armamentos_db;
+CREATE USER 'armamentos_user'@'localhost' IDENTIFIED BY 'armamentos_pass';
+GRANT ALL PRIVILEGES ON armamentos_db.* TO 'armamentos_user'@'localhost';
 ```
 
-## Authentication
-The API uses Spring Security for authentication control. The following roles are available:
+2. Configure `src/main/resources/application.properties` com suas credenciais.
+
+3. Inicie a aplicação:
+
+```bash
+./mvnw spring-boot:run
+```
+
+---
+
+## Variáveis de ambiente (produção)
+
+| Variável | Descrição |
+|---|---|
+| `SPRING_DATASOURCE_URL` | URL JDBC do MySQL |
+| `SPRING_DATASOURCE_USERNAME` | Usuário do banco |
+| `SPRING_DATASOURCE_PASSWORD` | Senha do banco |
+| `API_SECURITY_TOKEN_SECRET` | Chave secreta para assinar JWT |
+| `UNIDADE_NOME_CHEFE_P4` | Nome do chefe do P/4 |
+| `UNIDADE_POSTO_CHEFE_P4` | Posto/graduação do chefe do P/4 |
+| `UNIDADE_FUNCAO_CHEFE_P4` | Função do chefe do P/4 |
+| `UNIDADE_NOME_COMANDANTE_OPM` | Nome do comandante da OPM |
+| `UNIDADE_POSTO_COMANDANTE_OPM` | Posto/graduação do comandante |
+| `UNIDADE_FUNCAO_COMANDANTE_OPM` | Função do comandante |
+
+---
+
+## Endpoints principais
+
+### Autenticação
+| Método | Rota | Descrição |
+|---|---|---|
+| `POST` | `/auth/login` | Login — retorna token JWT |
+| `POST` | `/auth/register` | Cadastro de usuário |
+
+### Militares
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/militares` | Lista todos os militares |
+| `GET` | `/militares/{id}` | Busca militar por ID |
+| `POST` | `/militares` | Cadastra novo militar |
+| `PUT` | `/militares/{id}` | Atualiza dados do militar |
+| `DELETE` | `/militares/{id}` | Remove militar |
+
+### Controle de Armamento
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/controle-armamento` | Lista todas as cautelas |
+| `POST` | `/controle-armamento` | Registra nova cautela |
+| `PUT` | `/controle-armamento/{id}/baixa` | Devolução de arma (baixa) |
+| `GET` | `/controle-armamento/{id}/pdf/{tipo}` | Gera PDF do documento |
+
+### Armas e Coletes
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/armas` | Lista armas cadastradas |
+| `GET` | `/coletes` | Lista coletes cadastrados |
+
+### Dashboard
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/dashboard` | Totais de armas, coletes e efetivo |
+
+---
+
+## Estrutura do projeto
 
 ```
-USER -> Standard user role for logged-in users.
-ADMIN -> Admin role for managing partners (registering new partners).
+armamentos-backend/
+├── src/main/java/com/example/auth/
+│   ├── config/            # Configurações (unidade policial, modelMapper)
+│   ├── controllers/       # Endpoints REST
+│   ├── domain/
+│   │   ├── dto/           # Data Transfer Objects
+│   │   └── enums/         # Enumerações (PostoGraduacao, Situacao, Sexo...)
+│   ├── infra/security/    # JWT, filtros e configuração de segurança
+│   ├── repositories/      # Interfaces Spring Data JPA
+│   └── services/          # Regras de negócio e geração de PDFs
+├── src/main/resources/
+│   ├── application.properties
+│   ├── reports/           # JRXMLs e JASPERs compilados
+│   └── templates/         # Templates HTML (Thymeleaf) para PDF
+└── pom.xml
 ```
-To access protected endpoints as an ADMIN user, provide the appropriate authentication credentials in the request header.
 
-## Database
-The project utilizes [PostgresSQL](https://www.postgresql.org/) as the database. The necessary database migrations are managed using Flyway.
+---
 
-## Contributing
+## Licença
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request to the repository.
-
-When contributing to this project, please follow the existing code style, [commit conventions](https://www.conventionalcommits.org/en/v1.0.0/), and submit your changes in a separate branch.
-
-
-
-
+Uso interno — 31º Batalhão de Polícia Militar / PMMA. Todos os direitos reservados.
