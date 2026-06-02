@@ -12,8 +12,9 @@ public class ControleArmamentoVisualizacaoDTO {
     private Long militarId;
     private Long armaId;
     private Long coleteId;
-    private String militarNome;       // NOVO
-    private String armaNumeroSerie;   // NOVO
+    private String militarNome;
+    private String militarNomeGuerra;
+    private String armaNumeroSerie;
     private Integer quantidadeMunicao;
     private LocalDate dataEntrega;
     private LocalDate dataDevolucao;
@@ -24,6 +25,7 @@ public class ControleArmamentoVisualizacaoDTO {
         dto.setId(entity.getId());
         dto.setMilitarId(entity.getMilitar() != null ? entity.getMilitar().getId() : null);
         dto.setMilitarNome(entity.getMilitar() != null ? entity.getMilitar().getNomeCompleto() : null);
+        dto.setMilitarNomeGuerra(entity.getMilitar() != null ? entity.getMilitar().getNomeGuerra() : null);
         dto.setArmaId(entity.getArma() != null ? entity.getArma().getId() : null);
         dto.setArmaNumeroSerie(entity.getArma() != null ? entity.getArma().getNumeroSerie() : null);
         dto.setColeteId(entity.getColete() != null ? entity.getColete().getId() : null);
