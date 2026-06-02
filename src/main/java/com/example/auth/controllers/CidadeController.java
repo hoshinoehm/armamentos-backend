@@ -27,7 +27,7 @@ public class CidadeController {
     @GetMapping
     public List<Cidade> listar(@RequestParam(required = false) Integer estadoId) {
         if (estadoId != null) {
-            return repository.findByUf(estadoId);
+            return repository.findByEstadoId(estadoId);
         }
         return repository.findAll();
     }
