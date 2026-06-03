@@ -117,8 +117,13 @@ public class MilitarDTO {
         }
 
         militar.setSituacao(this.situacao);
-        if (this.postoGraduacaoEnum != null && !this.postoGraduacaoEnum.isBlank()) {
-            militar.setPostoGraduacao(PostoGraduacao.valueOf(this.postoGraduacaoEnum));
+        String postoEnumName = (this.postoGraduacaoEnum != null && !this.postoGraduacaoEnum.isBlank())
+                ? this.postoGraduacaoEnum
+                : this.postoGraduacao;
+        if (postoEnumName != null && !postoEnumName.isBlank()) {
+            try {
+                militar.setPostoGraduacao(PostoGraduacao.valueOf(postoEnumName));
+            } catch (IllegalArgumentException ignored) {}
         }
         militar.setQuadro(this.quadro);
         militar.setNumeroBarra(this.numeroBarra);
